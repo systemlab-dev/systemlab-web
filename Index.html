@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="SystemLab — Ingeniería de software a tu medida. Creamos soluciones tecnológicas personalizadas, modernas y escalables para tu empresa.">
+  <meta name="keywords"
+    content="software a medida, desarrollo web, aplicaciones móviles, sistemas de gestión, ERP, CRM, consultoría tecnológica, SystemLab">
+  <meta name="author" content="SystemLab">
+  <title>SystemLab — Ingeniería de Software a tu Medida</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/Logo/screen.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- NAVBAR                                      -->
+  <!-- ═══════════════════════════════════════════ -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#inicio" class="navbar__brand">
+        <svg class="navbar__logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <path d="M40 60 L100 30 L160 60 L160 140 L100 170 L40 140 Z" fill="none" stroke="currentColor"
+            stroke-width="8" />
+          <path d="M70 85 L100 70 L130 85 L130 115 L100 130 L70 115 Z" fill="currentColor" />
+          <rect x="95" y="45" width="10" height="20" fill="currentColor" transform="rotate(30 100 100)" />
+        </svg>
+        <span class="navbar__name">System<strong>Lab</strong></span>
+      </a>
+
+      <nav class="navbar__nav" id="navMenu">
+        <a href="#inicio" class="navbar__link">Inicio</a>
+        <a href="#servicios" class="navbar__link">Servicios</a>
+        <a href="#nosotros" class="navbar__link">Nosotros</a>
+        <a href="#proceso" class="navbar__link">Proceso</a>
+        <a href="portfolio.html" class="navbar__link">Portafolio</a>
+        <a href="#contacto" class="navbar__link navbar__link--cta">Cotizar Proyecto</a>
+      </nav>
+
+      <button class="navbar__toggle" id="navToggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- HERO                                        -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="hero hero--flat" id="inicio">
+      <div class="container hero__inner">
+        <div class="hero__content" data-reveal="fade-right">
+          <span class="hero__badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            Disponibles para nuevos proyectos
+          </span>
+          <h1 class="hero__title">
+            Ingeniería de Software<br>
+            <span class="text-accent">a tu Medida</span>
+          </h1>
+          <p class="hero__subtitle">Desarrollamos soluciones tecnológicas con arquitectura sólida y un enfoque Flat
+            Design 2.0. Sin distracciones, rendimiento puro.</p>
+
+          <div class="hero__actions">
+            <a href="#contacto" class="btn btn--primary">
+              Iniciar Proyecto
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a href="#servicios" class="btn btn--outline">
+              Ver Servicios
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__visual" data-reveal="fade-left" data-reveal-delay="200">
+          <div class="hero__logo-wrap">
+            <div class="hero__orbit hero__orbit--1"></div>
+            <div class="hero__orbit hero__orbit--2"></div>
+            <svg class="hero__logo-main" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <path d="M40 60 L100 30 L160 60 L160 140 L100 170 L40 140 Z" fill="rgba(16, 185, 129, 0.1)"
+                stroke="var(--c-primary)" stroke-width="2" />
+              <path d="M55 70 L100 45 L145 70 L145 130 L100 155 L55 130 Z" fill="none" stroke="var(--c-primary)"
+                stroke-width="1.5" />
+              <path d="M70 85 L100 70 L130 85 L130 115 L100 130 L70 115 Z" fill="var(--c-primary)" />
+              <text x="100" y="108" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="24"
+                font-weight="800">SL</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overlapping Project Cards -->
+    <section class="hero-overlap-section">
+      <div class="container">
+        <div class="hero-projects-grid">
+          <div class="hero-project-card" data-reveal="fade-up" data-reveal-delay="0">
+            <div class="hero-project-card__img" style="background-image: url('img/projects/floreria.avif')"></div>
+            <div class="hero-project-card__content">
+              <h3>Tienda Online Florería</h3>
+              <p class="hero-project-card__tech"><strong>Stack:</strong> PHP, MySQL, MVC</p>
+              <p>E-commerce autogestionable con panel de administración completo.</p>
+              <a href="https://floreria-tiendaonline.infinityfreeapp.com/" target="_blank" rel="noopener noreferrer"
+                class="btn btn--outline btn--small">Ver Proyecto</a>
+            </div>
+          </div>
+          <div class="hero-project-card" data-reveal="fade-up" data-reveal-delay="100">
+            <div class="hero-project-card__img" style="background-image: url('img/projects/barberia.avif')"></div>
+            <div class="hero-project-card__content">
+              <h3>Sistema Reservas Barbería</h3>
+              <p class="hero-project-card__tech"><strong>Stack:</strong> Spring Boot, React, Docker</p>
+              <p>Plataforma full-stack de reservas con gestión de citas en tiempo real.</p>
+              <a href="https://sistema-reservas-barberia.vercel.app/" target="_blank" rel="noopener noreferrer"
+                class="btn btn--outline btn--small">Ver Proyecto</a>
+            </div>
+          </div>
+          <div class="hero-project-card" data-reveal="fade-up" data-reveal-delay="200">
+            <div class="hero-project-card__img" style="background-image: url('img/projects/corporacion.avif')"></div>
+            <div class="hero-project-card__content">
+              <h3>Web Corporativa Raunass</h3>
+              <p class="hero-project-card__tech"><strong>Stack:</strong> Astro, HTML/CSS, JS</p>
+              <p>Portal institucional de alto rendimiento y SEO optimizado para empresa.</p>
+              <a href="https://corporacionraunass.vercel.app/" target="_blank" rel="noopener noreferrer"
+                class="btn btn--outline btn--small">Ver Proyecto</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Diagonal section divider -->
+    <div class="section-divider section-divider--hero"></div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- TRUST BAR (Confianza)                       -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="trust-bar">
+      <div class="container">
+        <div class="trust-bar__grid">
+          <div class="trust-bar__item" data-reveal="fade-up" data-reveal-delay="0">
+            <div class="trust-bar__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0110 0v4" />
+              </svg>
+            </div>
+            <div class="trust-bar__text">
+              <strong>Código Seguro</strong>
+              <span>Mejores prácticas de seguridad</span>
+            </div>
+          </div>
+          <div class="trust-bar__item" data-reveal="fade-up" data-reveal-delay="100">
+            <div class="trust-bar__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+              </svg>
+            </div>
+            <div class="trust-bar__text">
+              <strong>Alto Rendimiento</strong>
+              <span>Optimización garantizada</span>
+            </div>
+          </div>
+          <div class="trust-bar__item" data-reveal="fade-up" data-reveal-delay="200">
+            <div class="trust-bar__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+            <div class="trust-bar__text">
+              <strong>Soporte Continuo</strong>
+              <span>Acompañamiento post-entrega</span>
+            </div>
+          </div>
+          <div class="trust-bar__item" data-reveal="fade-up" data-reveal-delay="300">
+            <div class="trust-bar__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M15 22v-4a4.8 4.8 0 00-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 004 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                <path d="M9 18c-4.51 2-5-2-7-2" />
+              </svg>
+            </div>
+            <div class="trust-bar__text">
+              <strong>Gestión Profesional</strong>
+              <span>GitHub & metodologías ágiles</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- SERVICIOS                                   -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="services" id="servicios">
+      <div class="services__bg-pattern"></div>
+      <div class="container">
+        <div class="section-header" data-reveal="fade-up">
+          <span class="section-header__tag">Nuestros Servicios</span>
+          <h2 class="section-header__title">Soluciones exactas para<br><span class="text-accent">desafíos reales</span>
+          </h2>
+          <p class="section-header__desc">Cada proyecto es único. Diseñamos y desarrollamos tecnología que se adapta
+            perfectamente a las necesidades de tu negocio.</p>
+        </div>
+
+        <div class="services__grid">
+          <!-- Servicio 1 -->
+          <div class="card card--service" data-reveal="zoom-in" data-reveal-delay="0">
+            <div class="card__icon-wrap">
+              <svg class="card__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="8" width="40" height="28" rx="3" stroke="currentColor" stroke-width="2.5" />
+                <line x1="4" y1="36" x2="20" y2="42" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                <line x1="44" y1="36" x2="28" y2="42" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                <line x1="20" y1="42" x2="28" y2="42" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                <polyline points="16,22 20,26 28,18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <h3 class="card__title">Desarrollo Web a Medida</h3>
+            <p class="card__desc">Plataformas web modernas con interfaces limpias (Clean UI) y experiencia de usuario
+              excepcional, construidas desde cero para tu negocio.</p>
+            <div class="card__tags">
+              <span class="tag">React</span>
+              <span class="tag">Next.js</span>
+              <span class="tag">Node.js</span>
+            </div>
+          </div>
+
+          <!-- Servicio 2 -->
+          <div class="card card--service" data-reveal="zoom-in" data-reveal-delay="100">
+            <div class="card__icon-wrap">
+              <svg class="card__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="14" y="4" width="20" height="40" rx="4" stroke="currentColor" stroke-width="2.5" />
+                <line x1="14" y1="12" x2="34" y2="12" stroke="currentColor" stroke-width="2.5" />
+                <line x1="14" y1="36" x2="34" y2="36" stroke="currentColor" stroke-width="2.5" />
+                <circle cx="24" cy="40" r="2" fill="currentColor" />
+              </svg>
+            </div>
+            <h3 class="card__title">Aplicaciones Móviles</h3>
+            <p class="card__desc">Apps nativas y multiplataforma con rendimiento excepcional, diseño intuitivo y
+              funcionalidad que tus usuarios amarán.</p>
+            <div class="card__tags">
+              <span class="tag">Flutter</span>
+              <span class="tag">React Native</span>
+              <span class="tag">iOS/Android</span>
+            </div>
+          </div>
+
+          <!-- Servicio 3 -->
+          <div class="card card--service" data-reveal="zoom-in" data-reveal-delay="200">
+            <div class="card__icon-wrap">
+              <svg class="card__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="6" y="10" width="36" height="28" rx="3" stroke="currentColor" stroke-width="2.5" />
+                <line x1="6" y1="18" x2="42" y2="18" stroke="currentColor" stroke-width="2.5" />
+                <line x1="18" y1="18" x2="18" y2="38" stroke="currentColor" stroke-width="2.5" />
+                <circle cx="12" cy="14" r="1.5" fill="currentColor" />
+                <rect x="22" y="23" width="14" height="3" rx="1" fill="currentColor" opacity="0.5" />
+                <rect x="22" y="29" width="10" height="3" rx="1" fill="currentColor" opacity="0.5" />
+              </svg>
+            </div>
+            <h3 class="card__title">Sistemas de Gestión</h3>
+            <p class="card__desc">ERP, CRM y sistemas administrativos personalizados que automatizan procesos y elevan
+              la eficiencia operativa de tu empresa.</p>
+            <div class="card__tags">
+              <span class="tag">ERP</span>
+              <span class="tag">CRM</span>
+              <span class="tag">Dashboard</span>
+            </div>
+          </div>
+
+          <!-- Servicio 4 -->
+          <div class="card card--service" data-reveal="zoom-in" data-reveal-delay="0">
+            <div class="card__icon-wrap">
+              <svg class="card__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="8" stroke="currentColor" stroke-width="2.5" />
+                <circle cx="34" cy="16" r="8" stroke="currentColor" stroke-width="2.5" />
+                <circle cx="24" cy="34" r="8" stroke="currentColor" stroke-width="2.5" />
+                <line x1="20" y1="22" x2="22" y2="28" stroke="currentColor" stroke-width="2.5" />
+                <line x1="28" y1="22" x2="26" y2="28" stroke="currentColor" stroke-width="2.5" />
+              </svg>
+            </div>
+            <h3 class="card__title">APIs & Microservicios</h3>
+            <p class="card__desc">Arquitecturas escalables y robustas que conectan tus sistemas, permiten integraciones
+              y preparan tu negocio para crecer.</p>
+            <div class="card__tags">
+              <span class="tag">REST</span>
+              <span class="tag">GraphQL</span>
+              <span class="tag">Cloud</span>
+            </div>
+          </div>
+
+          <!-- Servicio 5 -->
+          <div class="card card--service" data-reveal="zoom-in" data-reveal-delay="100">
+            <div class="card__icon-wrap">
+              <svg class="card__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="10" stroke="currentColor" stroke-width="2.5" />
+                <path d="M24 4L24 10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                <path d="M24 38L24 44" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                <path d="M4 24L10 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                <path d="M38 24L44 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                <path d="M20 24L22.5 26.5L28 21" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <h3 class="card__title">Consultoría Tecnológica</h3>
+            <p class="card__desc">Analizamos tu negocio y te guiamos en la toma de decisiones tecnológicas correctas.
+              Estrategia antes de código.</p>
+            <div class="card__tags">
+              <span class="tag">Análisis</span>
+              <span class="tag">Estrategia</span>
+              <span class="tag">Roadmap</span>
+            </div>
+          </div>
+
+          <!-- Servicio 6 -->
+          <div class="card card--service" data-reveal="zoom-in" data-reveal-delay="200">
+            <div class="card__icon-wrap">
+              <svg class="card__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 8C14 8 8 14 8 24C8 34 14 40 24 40" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" />
+                <path d="M24 8C34 8 40 14 40 24C40 34 34 40 24 40" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-dasharray="4 3" />
+                <path d="M28 20L36 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                <path d="M36 12L36 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                <path d="M36 12L30 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                <circle cx="24" cy="24" r="4" fill="currentColor" />
+              </svg>
+            </div>
+            <h3 class="card__title">Soporte & Mantenimiento</h3>
+            <p class="card__desc">Acompañamiento post-entrega con monitoreo, actualizaciones y soporte técnico para que
+              tu sistema siempre funcione al máximo.</p>
+            <div class="card__tags">
+              <span class="tag">24/7</span>
+              <span class="tag">Monitoreo</span>
+              <span class="tag">Updates</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Diagonal divider -->
+    <div class="section-divider section-divider--services"></div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- NOSOTROS                                    -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="about" id="nosotros">
+      <div class="about__bg-accent"></div>
+      <div class="container about__inner">
+        <div class="about__visual" data-reveal="fade-right">
+          <div class="about__image-wrap">
+            <div class="about__float-card about__float-card--1" data-parallax="0.04">
+              <span class="about__float-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--c-primary)" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="12" y1="8" x2="12" y2="12" />
+                  <line x1="12" y1="16" x2="12.01" y2="16" />
+                  <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3" />
+                </svg>
+              </span>
+              <span>Precisión de laboratorio</span>
+            </div>
+            <div class="about__float-card about__float-card--2" data-parallax="-0.03">
+              <span class="about__float-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--c-primary)" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                  <circle cx="12" cy="12" r="4" />
+                </svg>
+              </span>
+              <span>Innovación constante</span>
+            </div>
+            <div class="about__hex-visual">
+              <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="hexGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.15" />
+                    <stop offset="100%" style="stop-color:#059669;stop-opacity:0.05" />
+                  </linearGradient>
+                </defs>
+                <path d="M60 90 L150 45 L240 90 L240 210 L150 255 L60 210 Z" fill="url(#hexGrad)" stroke="#10b981"
+                  stroke-width="2" opacity="0.6" />
+                <path d="M90 110 L150 80 L210 110 L210 190 L150 220 L90 190 Z" fill="none" stroke="#10b981"
+                  stroke-width="1.5" opacity="0.4" />
+                <path d="M115 125 L150 108 L185 125 L185 175 L150 192 L115 175 Z" fill="#10b981" opacity="0.2" />
+                <text x="150" y="155" text-anchor="middle" fill="#10b981" font-family="Inter, sans-serif" font-size="18"
+                  font-weight="700" opacity="0.8">SL</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="about__content" data-reveal="fade-left" data-reveal-delay="200">
+          <span class="section-header__tag">Sobre Nosotros</span>
+          <h2 class="section-header__title">El factor <span class="text-accent">"Lab"</span></h2>
+          <p class="about__text">En <strong>SystemLab</strong>, funcionamos como un laboratorio de tecnología:
+            experimentamos, analizamos y creamos soluciones con la misma precisión, cuidado e investigación que se tiene
+            en un laboratorio científico.</p>
+          <p class="about__text">No vendemos plantillas genéricas. Cada línea de código que escribimos está diseñada
+            para resolver un problema específico de tu negocio. Utilizamos metodologías ágiles, gestión profesional con
+            GitHub, y las mejores prácticas de la industria.</p>
+
+          <div class="about__stats">
+            <div class="about__stat" data-reveal="fade-up" data-reveal-delay="100">
+              <span class="about__stat-number" data-count="50">0</span><span class="about__stat-suffix">+</span>
+              <span class="about__stat-label">Proyectos Entregados</span>
+            </div>
+            <div class="about__stat" data-reveal="fade-up" data-reveal-delay="200">
+              <span class="about__stat-number" data-count="30">0</span><span class="about__stat-suffix">+</span>
+              <span class="about__stat-label">Clientes Satisfechos</span>
+            </div>
+            <div class="about__stat" data-reveal="fade-up" data-reveal-delay="300">
+              <span class="about__stat-number" data-count="5">0</span><span class="about__stat-suffix">+</span>
+              <span class="about__stat-label">Años de Experiencia</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- POR QUÉ ELEGIRNOS (Confianza)              -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="why-us">
+      <div class="why-us__bg-pattern"></div>
+      <div class="container">
+        <div class="section-header" data-reveal="fade-up">
+          <span class="section-header__tag">¿Por qué SystemLab?</span>
+          <h2 class="section-header__title">Razones para <span class="text-accent">confiar</span> en nosotros</h2>
+        </div>
+
+        <div class="why-us__grid">
+          <div class="card card--why" data-reveal="slide-right" data-reveal-delay="0">
+            <div class="card__number">01</div>
+            <h3 class="card__title">100% Personalizado</h3>
+            <p class="card__desc">Cada solución se construye desde cero, adaptada exactamente a tus necesidades. Nada de
+              plantillas, nada genérico.</p>
+          </div>
+          <div class="card card--why" data-reveal="slide-right" data-reveal-delay="100">
+            <div class="card__number">02</div>
+            <h3 class="card__title">Transparencia Total</h3>
+            <p class="card__desc">Acceso a tu repositorio en GitHub desde el día uno. Ves cada avance, cada línea de
+              código, en tiempo real.</p>
+          </div>
+          <div class="card card--why" data-reveal="slide-left" data-reveal-delay="200">
+            <div class="card__number">03</div>
+            <h3 class="card__title">Metodología Ágil</h3>
+            <p class="card__desc">Entregas incrementales con feedback constante. No esperas meses — ves resultados desde
+              las primeras semanas.</p>
+          </div>
+          <div class="card card--why" data-reveal="slide-right" data-reveal-delay="0">
+            <div class="card__number">04</div>
+            <h3 class="card__title">Tecnología Moderna</h3>
+            <p class="card__desc">Usamos las herramientas y frameworks más actuales del mercado para garantizar
+              rendimiento y escalabilidad.</p>
+          </div>
+          <div class="card card--why" data-reveal="slide-right" data-reveal-delay="100">
+            <div class="card__number">05</div>
+            <h3 class="card__title">Soporte Post-Entrega</h3>
+            <p class="card__desc">No desaparecemos después de entregar. Brindamos acompañamiento, mantenimiento y
+              soporte continuo.</p>
+          </div>
+          <div class="card card--why" data-reveal="slide-left" data-reveal-delay="200">
+            <div class="card__number">06</div>
+            <h3 class="card__title">Resultados Medibles</h3>
+            <p class="card__desc">Cada proyecto tiene KPIs claros. Medimos el impacto de nuestra tecnología en tu
+              negocio.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Diagonal divider -->
+    <div class="section-divider section-divider--why"></div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- PROCESO                                     -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="process" id="proceso">
+      <div class="process__bg-diagonal"></div>
+      <div class="container">
+        <div class="section-header" data-reveal="fade-up">
+          <span class="section-header__tag">Nuestro Proceso</span>
+          <h2 class="section-header__title">Del problema a la <span class="text-accent">solución</span></h2>
+          <p class="section-header__desc">Un proceso claro, transparente y profesional en cada etapa del proyecto.</p>
+        </div>
+
+        <div class="process__timeline">
+          <div class="process__line"></div>
+
+          <div class="process__step" data-reveal="fade-up" data-reveal-delay="0">
+            <div class="process__step-number">1</div>
+            <div class="process__step-content">
+              <div class="process__step-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8" />
+                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+              </div>
+              <h3>Análisis & Descubrimiento</h3>
+              <p>Nos sumergimos en tu negocio. Entendemos tus procesos, identificamos cuellos de botella y definimos los
+                objetivos del proyecto.</p>
+            </div>
+          </div>
+
+          <div class="process__step" data-reveal="fade-up" data-reveal-delay="150">
+            <div class="process__step-number">2</div>
+            <div class="process__step-content">
+              <div class="process__step-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 19l7-7 3 3-7 7-3-3z" />
+                  <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+                  <path d="M2 2l7.586 7.586" />
+                  <circle cx="11" cy="11" r="2" />
+                </svg>
+              </div>
+              <h3>Diseño & Arquitectura</h3>
+              <p>Creamos prototipos visuales y definimos la arquitectura técnica. Validamos contigo antes de escribir
+                una sola línea de código.</p>
+            </div>
+          </div>
+
+          <div class="process__step" data-reveal="fade-up" data-reveal-delay="300">
+            <div class="process__step-number">3</div>
+            <div class="process__step-content">
+              <div class="process__step-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                  <line x1="14" y1="4" x2="10" y2="20" />
+                </svg>
+              </div>
+              <h3>Desarrollo & Testing</h3>
+              <p>Construimos tu solución con sprints iterativos. Pruebas continuas garantizan calidad en cada entrega
+                parcial.</p>
+            </div>
+          </div>
+
+          <div class="process__step" data-reveal="fade-up" data-reveal-delay="450">
+            <div class="process__step-number">4</div>
+            <div class="process__step-content">
+              <div class="process__step-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+              </div>
+              <h3>Entrega & Soporte</h3>
+              <p>Desplegamos tu proyecto, capacitamos a tu equipo y te acompañamos con soporte técnico continuo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- PORTAFOLIO                                  -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="portfolio" id="portafolio">
+      <div class="container">
+        <div class="section-header" data-reveal="fade-up">
+          <span class="section-header__tag">Portafolio</span>
+          <h2 class="section-header__title">Proyectos que <span class="text-accent">hablan</span> por nosotros</h2>
+          <p class="section-header__desc">Cada proyecto es un testimonio de nuestra dedicación y capacidad técnica.</p>
+        </div>
+
+        <div class="portfolio__grid">
+          <div class="card card--project" data-reveal="flip-up" data-reveal-delay="0">
+            <div class="card__project-visual card__project-visual--1">
+              <div class="card__project-overlay">
+                <span class="btn btn--small">Ver Proyecto</span>
+              </div>
+            </div>
+            <div class="card__project-info">
+              <h3 class="card__title">E-Commerce Platform</h3>
+              <p class="card__desc">Plataforma de comercio electrónico con inventario, pagos y panel de administración
+                personalizado.</p>
+              <div class="card__tags">
+                <span class="tag">React</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">PostgreSQL</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card--project" data-reveal="flip-up" data-reveal-delay="150">
+            <div class="card__project-visual card__project-visual--2">
+              <div class="card__project-overlay">
+                <span class="btn btn--small">Ver Proyecto</span>
+              </div>
+            </div>
+            <div class="card__project-info">
+              <h3 class="card__title">Sistema ERP Corporativo</h3>
+              <p class="card__desc">Sistema de gestión integral con módulos de inventario, finanzas, RRHH y reportería
+                avanzada.</p>
+              <div class="card__tags">
+                <span class="tag">Angular</span>
+                <span class="tag">.NET</span>
+                <span class="tag">SQL Server</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card--project" data-reveal="flip-up" data-reveal-delay="300">
+            <div class="card__project-visual card__project-visual--3">
+              <div class="card__project-overlay">
+                <span class="btn btn--small">Ver Proyecto</span>
+              </div>
+            </div>
+            <div class="card__project-info">
+              <h3 class="card__title">App de Delivery</h3>
+              <p class="card__desc">Aplicación móvil multiplataforma con tracking en tiempo real, notificaciones push y
+                pasarela de pagos.</p>
+              <div class="card__tags">
+                <span class="tag">Flutter</span>
+                <span class="tag">Firebase</span>
+                <span class="tag">Google Maps</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Diagonal divider -->
+    <div class="section-divider section-divider--portfolio"></div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- TESTIMONIOS                                 -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="testimonials">
+      <div class="testimonials__bg-diagonal"></div>
+      <div class="container">
+        <div class="section-header" data-reveal="fade-up">
+          <span class="section-header__tag">Testimonios</span>
+          <h2 class="section-header__title">Lo que dicen nuestros <span class="text-accent">clientes</span></h2>
+        </div>
+
+        <div class="testimonials__carousel" id="testimonialCarousel" data-reveal="fade-up" data-reveal-delay="200">
+          <div class="testimonials__track" id="testimonialTrack">
+            <div class="card card--testimonial">
+              <div class="card__stars">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308" stroke-width="1">
+                  <path
+                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                </svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308" stroke-width="1">
+                  <path
+                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                </svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308" stroke-width="1">
+                  <path
+                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                </svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308" stroke-width="1">
+                  <path
+                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                </svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308" stroke-width="1">
+                  <path
+                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                </svg>
+              </div>
+              <p class="card__quote">"SystemLab transformó completamente nuestra operación. El sistema que nos
+                desarrollaron redujo nuestros tiempos de proceso en un 60%. Excelente equipo y comunicación constante."
+              </p>
+              <div class="card__author">
+                <div class="card__avatar card__avatar--1">MR</div>
+                <div>
+                  <strong>María Rodríguez</strong>
+                  <span>CEO, Logística Express</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card card--testimonial">
+              <div class="card__stars">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308" stroke-width="1">
+                  <path
+                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                </svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308" stroke-width="1">
+                  <path
+                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                </svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308" stroke-width="1">
+                  <path
+                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                </svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308" stroke-width="1">
+                  <path
+                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                </svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308" stroke-width="1">
+                  <path
+                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                </svg>
+              </div>
+              <p class="card__quote">"La transparencia en todo el proceso fue increíble. Podíamos ver cada avance en
+                GitHub y siempre tuvimos claro en qué etapa estaba nuestro proyecto. Muy profesionales."</p>
+              <div class="card__author">
+                <div class="card__avatar card__avatar--2">CG</div>
+                <div>
+                  <strong>Carlos García</strong>
+                  <span>Director de TI, FinanPro</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card card--testimonial">
+              <div class="card__stars">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308" stroke-width="1">
+                  <path
+                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                </svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308" stroke-width="1">
+                  <path
+                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                </svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308" stroke-width="1">
+                  <path
+                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                </svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308" stroke-width="1">
+                  <path
+                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                </svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308" stroke-width="1">
+                  <path
+                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                </svg>
+              </div>
+              <p class="card__quote">"Necesitábamos una solución muy específica y ningún software genérico la cubría.
+                SystemLab entendió nuestro problema y creó exactamente lo que necesitábamos. 100% recomendados."</p>
+              <div class="card__author">
+                <div class="card__avatar card__avatar--3">AL</div>
+                <div>
+                  <strong>Ana López</strong>
+                  <span>Gerente General, MediCorp</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonials__nav">
+            <button class="testimonials__btn" id="prevTestimonial" aria-label="Anterior">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M13 4L7 10L13 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+            <div class="testimonials__dots" id="testimonialDots"></div>
+            <button class="testimonials__btn" id="nextTestimonial" aria-label="Siguiente">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M7 4L13 10L7 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- CTA SECTION                                 -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="cta">
+      <div class="cta__bg-pattern"></div>
+      <div class="container cta__inner" data-reveal="zoom-in">
+        <h2 class="cta__title">¿Listo para transformar tu negocio?</h2>
+        <p class="cta__desc">Cuéntanos tu idea y construyamos juntos la solución perfecta para tu empresa.</p>
+        <a href="#contacto" class="btn btn--primary btn--large">
+          Solicitar Cotización Gratis
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- CONTACTO                                    -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="contact" id="contacto">
+      <div class="contact__bg-shapes"></div>
+      <div class="container contact__inner">
+        <div class="contact__info" data-reveal="fade-right">
+          <span class="section-header__tag">Contacto</span>
+          <h2 class="section-header__title">Hablemos de tu <span class="text-accent">proyecto</span></h2>
+          <p class="contact__text">¿Tienes una idea o un problema que la tecnología puede resolver? Escríbenos y te
+            responderemos en menos de 24 horas.</p>
+
+          <div class="contact__details">
+            <div class="contact__detail">
+              <div class="contact__detail-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </div>
+              <div>
+                <strong>Email</strong>
+                <span>contacto@systemlab.dev</span>
+              </div>
+            </div>
+            <div class="contact__detail">
+              <div class="contact__detail-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                </svg>
+              </div>
+              <div>
+                <strong>Teléfono</strong>
+                <span>+51 XXX XXX XXX</span>
+              </div>
+            </div>
+            <div class="contact__detail">
+              <div class="contact__detail-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </div>
+              <div>
+                <strong>Ubicación</strong>
+                <span>Remoto — Servicio en toda Latinoamérica</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact__socials">
+            <a href="#" class="contact__social" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+              </svg>
+            </a>
+            <a href="#" class="contact__social" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </a>
+            <a href="#" class="contact__social" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact__form-wrap" data-reveal="fade-left" data-reveal-delay="200">
+          <form class="contact__form" id="contactForm">
+            <div class="form__group">
+              <label for="name" class="form__label">Nombre completo</label>
+              <input type="text" id="name" class="form__input" placeholder="Tu nombre" required>
+            </div>
+            <div class="form__group">
+              <label for="email" class="form__label">Correo electrónico</label>
+              <input type="email" id="email" class="form__input" placeholder="tu@email.com" required>
+            </div>
+            <div class="form__group">
+              <label for="phone" class="form__label">Teléfono <span class="form__optional">(opcional)</span></label>
+              <input type="tel" id="phone" class="form__input" placeholder="+51 XXX XXX XXX">
+            </div>
+            <div class="form__group">
+              <label for="service" class="form__label">Servicio de interés</label>
+              <select id="service" class="form__input form__select">
+                <option value="">Selecciona un servicio</option>
+                <option value="web">Desarrollo Web a Medida</option>
+                <option value="mobile">Aplicaciones Móviles</option>
+                <option value="erp">Sistemas de Gestión (ERP/CRM)</option>
+                <option value="api">APIs & Microservicios</option>
+                <option value="consulting">Consultoría Tecnológica</option>
+                <option value="support">Soporte & Mantenimiento</option>
+              </select>
+            </div>
+            <div class="form__group">
+              <label for="message" class="form__label">Cuéntanos sobre tu proyecto</label>
+              <textarea id="message" class="form__input form__textarea"
+                placeholder="Describe brevemente tu idea o necesidad..." rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full" id="submitBtn">
+              <span>Enviar Mensaje</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- FOOTER                                      -->
+  <!-- ═══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer__diagonal-top"></div>
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#inicio" class="navbar__brand">
+          <svg class="navbar__logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path d="M40 60 L100 30 L160 60 L160 140 L100 170 L40 140 Z" fill="none" stroke="#10b981"
+              stroke-width="8" />
+            <path d="M70 85 L100 70 L130 85 L130 115 L100 130 L70 115 Z" fill="#10b981" />
+            <rect x="95" y="45" width="10" height="20" fill="#10b981" transform="rotate(30 100 100)" />
+          </svg>
+          <span class="navbar__name" style="color:#fff">System<strong>Lab</strong></span>
+        </a>
+        <p class="footer__tagline">Ingeniería de software a tu medida.<br>Soluciones exactas para desafíos reales.</p>
+      </div>
+
+      <div class="footer__links">
+        <h4>Navegación</h4>
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#portafolio">Portafolio</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+
+      <div class="footer__links">
+        <h4>Servicios</h4>
+        <a href="#servicios">Desarrollo Web</a>
+        <a href="#servicios">Apps Móviles</a>
+        <a href="#servicios">Sistemas ERP/CRM</a>
+        <a href="#servicios">APIs & Microservicios</a>
+        <a href="#servicios">Consultoría</a>
+        <a href="#servicios">Soporte</a>
+      </div>
+
+      <div class="footer__links">
+        <h4>Contacto</h4>
+        <a href="mailto:contacto@systemlab.dev">contacto@systemlab.dev</a>
+        <a href="tel:+51XXXXXXXXX">+51 XXX XXX XXX</a>
+        <a href="#">Lima, Perú</a>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p>&copy; 2026 SystemLab. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- FLOATING WHATSAPP                           -->
+  <!-- ═══════════════════════════════════════════ -->
+  <a href="https://wa.me/51XXXXXXXXX" class="floating-wa" target="_blank" rel="noopener noreferrer"
+    aria-label="Contactar por WhatsApp">
+    <div class="floating-wa__tooltip">¿Necesitas cotizar algo?</div>
+    <div class="floating-wa__icon">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+      </svg>
+    </div>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
