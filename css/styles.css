@@ -2041,12 +2041,12 @@ ul, ol {
     right: -100%;
     width: 280px;
     height: 100vh;
-    background: var(--c-surface);
+    background: #0f172a;
     flex-direction: column;
     align-items: flex-start;
     padding: 100px var(--space-xl) var(--space-xl);
     gap: 4px;
-    box-shadow: var(--shadow-xl);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
     transition: right var(--transition-slow);
   }
 
@@ -2108,7 +2108,8 @@ ul, ol {
   }
 
   .hero__logo-wrap {
-    max-width: 280px;
+    max-width: 180px;
+    margin-top: 2rem;
   }
 
   .hero__feature-card {
