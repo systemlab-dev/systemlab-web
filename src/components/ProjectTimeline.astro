@@ -1,0 +1,410 @@
+---
+// src/components/ProjectTimeline.astro
+
+const projects = [
+  {
+    num: "01",
+    tag: "E-Commerce",
+    title: "Tienda Online Florería",
+    desc: "Desarrollo de una plataforma de comercio electrónico completamente autogestionable. Incluye un panel de administración personalizado, gestión de inventario y un carrito de compras fluido, diseñado para maximizar las conversiones y ofrecer una experiencia de compra impecable.",
+    tech: ["PHP", "MySQL", "Arquitectura MVC", "HTML/CSS"],
+    img: "/img/projects/floreria.avif",
+    fallbackImg: "/img/projects/floreria.png",
+    link: "https://floreria-tiendaonline.infinityfreeapp.com/"
+  },
+  {
+    num: "02",
+    tag: "Plataforma Web",
+    title: "Sistema Reservas Barbería",
+    desc: "Un sistema full-stack avanzado que permite a los clientes agendar citas en tiempo real y a los administradores gestionar los horarios del equipo y flujos de caja. Implementado bajo una arquitectura moderna en contenedores para asegurar escalabilidad y alta disponibilidad.",
+    tech: ["Java Spring Boot", "React + Vite", "Tailwind CSS", "PostgreSQL", "Docker"],
+    img: "/img/projects/barberia.avif",
+    fallbackImg: "/img/projects/barberia.png",
+    link: "https://sistema-reservas-barberia.vercel.app/"
+  },
+  {
+    num: "03",
+    tag: "Sitio Corporativo",
+    title: "Web Corporativa Raunass",
+    desc: "Portal institucional de alto impacto desarrollado bajo estrictos estándares de rendimiento (Core Web Vitals). Un diseño orientado a SEO que proyecta profesionalismo y autoridad, cargando a velocidades ultra rápidas gracias a su arquitectura estática optimizada.",
+    tech: ["Astro", "JavaScript", "HTML5", "CSS3"],
+    img: "/img/projects/corporacion.avif",
+    fallbackImg: "/img/projects/corporacion.png",
+    link: "https://corporacionraunass.vercel.app/"
+  }
+];
+---
+
+<section class="timeline-section" id="proyectos-timeline">
+  <div class="timeline-wrapper">
+    
+    <!-- Vertical Line (Desktop Only) -->
+    <div class="timeline-line" id="timeline-line-container">
+      <div class="timeline-line__track"></div>
+      <div class="timeline-line__progress" id="timeline-progress"></div>
+    </div>
+
+    <!-- Cards -->
+    <div class="timeline-cards">
+      {projects.map((project, idx) => (
+        <div class="timeline-card" data-reveal={idx % 2 === 0 ? "fade-left" : "fade-right"}>
+          <!-- Dot on the line -->
+          <div class="timeline-dot-wrap">
+            <div class="timeline-dot"></div>
+          </div>
+
+          <div class="timeline-card__inner">
+            <!-- Image -->
+            <div class="timeline-card__img">
+              <img src={project.img} onerror={`this.src='${project.fallbackImg}'`} alt={project.title} loading="lazy" />
+              <div class="timeline-card__img-overlay"></div>
+            </div>
+
+            <!-- Content -->
+            <div class="timeline-card__content">
+              <span class="timeline-card__badge">{project.tag}</span>
+              <h3 class="timeline-card__title">{project.title}</h3>
+              <p class="timeline-card__desc">{project.desc}</p>
+              
+              <div class="timeline-tags">
+                {project.tech.map(t => (
+                  <span class="timeline-tag">{t}</span>
+                ))}
+              </div>
+
+              <div>
+                <a href={project.link} target="_blank" rel="noopener noreferrer" class="timeline-btn">
+                  Ver Proyecto
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Number badge -->
+          <div class="timeline-card__num">{project.num}</div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const section = document.getElementById('proyectos-timeline');
+    const progress = document.getElementById('timeline-progress');
+    if (!section || !progress) return;
+
+    const dots = document.querySelectorAll('.timeline-dot');
+
+    const updateScroll = () => {
+      const rect = section.getBoundingClientRect();
+      const viewHeight = window.innerHeight;
+      
+      const start = viewHeight * 0.8;
+      const end = -rect.height + viewHeight * 0.4;
+      
+      let pct = (start - rect.top) / (start - end);
+      pct = Math.max(0, Math.min(1, pct));
+      
+      // Animate progress line height
+      progress.style.height = (pct * 100) + '%';
+      
+      // Animate dots based on card position
+      const cards = document.querySelectorAll('.timeline-card');
+      cards.forEach((card, i) => {
+        const cardRect = (card as HTMLElement).getBoundingClientRect();
+        const cardCenter = cardRect.top + cardRect.height / 2;
+        if (cardCenter < viewHeight * 0.75) {
+          dots[i]?.classList.add('active');
+        } else {
+          dots[i]?.classList.remove('active');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', updateScroll, { passive: true });
+    updateScroll();
+  });
+</script>
+
+<style>
+  .timeline-section {
+    background: #0b1120;
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .timeline-wrapper {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    position: relative;
+  }
+
+  /* ── Vertical Line ── */
+  .timeline-line {
+    display: none;
+    position: absolute;
+    left: 2rem;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    z-index: 1;
+  }
+
+  .timeline-line__track {
+    position: absolute;
+    inset: 0;
+    background: rgba(16, 185, 129, 0.12);
+    border-radius: 999px;
+  }
+
+  .timeline-line__progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: #10b981;
+    border-radius: 999px;
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.5);
+    transition: height 0.15s ease-out;
+  }
+
+  @media (min-width: 768px) {
+    .timeline-line {
+      display: block;
+    }
+    .timeline-cards {
+      padding-left: 5rem;
+    }
+  }
+
+  /* ── Cards ── */
+  .timeline-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .timeline-card {
+    position: relative;
+  }
+
+  /* ── Dot ── */
+  .timeline-dot-wrap {
+    display: none;
+    position: absolute;
+    left: -3.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+  }
+
+  @media (min-width: 768px) {
+    .timeline-dot-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .timeline-dot {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: #0b1120;
+    border: 3px solid rgba(16, 185, 129, 0.4);
+    transition: all 0.4s ease;
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+
+  .timeline-dot.active {
+    background: #10b981;
+    border-color: #10b981;
+    box-shadow: 0 0 16px rgba(16, 185, 129, 0.7);
+    transform: scale(1.3);
+  }
+
+  /* ── Card Inner ── */
+  .timeline-card__inner {
+    display: flex;
+    flex-direction: column;
+    background: rgba(17, 24, 39, 0.85);
+    border: 1px solid #1e293b;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    position: relative;
+  }
+
+  .timeline-card__inner:hover {
+    border-color: rgba(16, 185, 129, 0.4);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    transform: translateY(-4px);
+  }
+
+  @media (min-width: 992px) {
+    .timeline-card__inner {
+      flex-direction: row;
+      min-height: 300px;
+    }
+  }
+
+  /* ── Image ── */
+  .timeline-card__img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  @media (min-width: 992px) {
+    .timeline-card__img {
+      width: 45%;
+      aspect-ratio: auto;
+    }
+  }
+
+  .timeline-card__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.7s ease;
+  }
+
+  .timeline-card__inner:hover .timeline-card__img img {
+    transform: scale(1.05);
+  }
+
+  .timeline-card__img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, #111827, transparent);
+    pointer-events: none;
+  }
+
+  @media (min-width: 992px) {
+    .timeline-card__img-overlay {
+      background: linear-gradient(to right, transparent 20%, #111827 95%);
+    }
+  }
+
+  /* ── Content ── */
+  .timeline-card__content {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @media (min-width: 992px) {
+    .timeline-card__content {
+      padding: 2.5rem;
+    }
+  }
+
+  .timeline-card__badge {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #10b981;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .timeline-card__title {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .timeline-card__desc {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* ── Number ── */
+  .timeline-card__num {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #10b981;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+  }
+
+  .timeline-card__inner:hover ~ .timeline-card__num {
+    background: #10b981;
+    color: #0f172a;
+    border-color: #10b981;
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+  }
+
+  /* ── Tags ── */
+  .timeline-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .timeline-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #10b981;
+    background-color: rgba(16, 185, 129, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    letter-spacing: 0.025em;
+  }
+
+  /* ── Button ── */
+  .timeline-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #10b981;
+    color: #ffffff !important;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+  }
+
+  .timeline-btn:hover {
+    background-color: #059669;
+    transform: translateY(-0.25rem);
+    box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
+  }
+</style>

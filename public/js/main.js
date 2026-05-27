@@ -5,27 +5,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ─── Scroll Progress Bar ───
-  const scrollProgress = document.getElementById('scrollProgress');
 
-  function updateScrollProgress() {
-    if (!scrollProgress) return;
-    const scrollTop = window.pageYOffset;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollPercent = (scrollTop / docHeight) * 100;
-    scrollProgress.style.width = scrollPercent + '%';
-  }
-
-  // ─── Navbar Scroll Effect ───
-  const navbar = document.getElementById('navbar');
-
-  function updateNavbar() {
-    if (window.pageYOffset > 50) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  }
 
   // ─── Parallax Elements ───
   const parallaxElements = document.querySelectorAll('[data-parallax]');
@@ -50,8 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', () => {
     if (!ticking) {
       requestAnimationFrame(() => {
-        updateScrollProgress();
-        updateNavbar();
+
         updateParallax();
         ticking = false;
       });
@@ -60,29 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Initial call
-  updateScrollProgress();
-  updateNavbar();
 
-  // ─── Mobile Menu Toggle ───
-  const navToggle = document.getElementById('navToggle');
-  const navMenu = document.getElementById('navMenu');
 
-  if (navToggle && navMenu) {
-    navToggle.addEventListener('click', () => {
-      navToggle.classList.toggle('active');
-      navMenu.classList.toggle('open');
-      document.body.style.overflow = navMenu.classList.contains('open') ? 'hidden' : '';
-    });
-
-    // Close menu on link click
-    navMenu.querySelectorAll('.navbar__link').forEach(link => {
-      link.addEventListener('click', () => {
-        navToggle.classList.remove('active');
-        navMenu.classList.remove('open');
-        document.body.style.overflow = '';
-      });
-    });
-  }
 
   // ─── Scroll Reveal Animation (multiple types) ───
   const revealElements = document.querySelectorAll('[data-reveal]');

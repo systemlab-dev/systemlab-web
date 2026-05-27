@@ -1,0 +1,36 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "SystemLab — Software único, negocios únicos",
+  description = "SystemLab — Software único, negocios únicos. Creamos soluciones tecnológicas personalizadas, modernas y escalables para tu empresa."
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content={description}>
+  <meta name="keywords" content="software a medida, desarrollo web, aplicaciones móviles, sistemas de gestión, ERP, CRM, consultoría tecnológica, SystemLab">
+  <meta name="author" content="SystemLab">
+  <title>{title}</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/img/Logo/screen.png">
+</head>
+<body>
+  <slot />
+</body>
+</html>

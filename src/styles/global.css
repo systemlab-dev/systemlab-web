@@ -1,3 +1,78 @@
+@import "tailwindcss";
+@source "../components";
+@source "../pages";
+
+@theme {
+  /* Colors */
+  --color-primary: var(--c-primary);
+  --color-primary-dark: var(--c-primary-dark);
+  --color-primary-light: var(--c-primary-light);
+  --color-primary-subtle: var(--c-primary-subtle);
+  --color-primary-glow: var(--c-primary-glow);
+
+  --color-bg: var(--c-bg);
+  --color-bg-alt: var(--c-bg-alt);
+  --color-surface: var(--c-surface);
+  --color-surface-hover: var(--c-surface-hover);
+
+  --color-text-main: var(--c-text);
+  --color-text-secondary: var(--c-text-secondary);
+  --color-text-muted: var(--c-text-muted);
+
+  --color-dark: var(--c-dark);
+  --color-dark-surface: var(--c-dark-surface);
+  --color-dark-border: var(--c-dark-border);
+
+  --color-border-main: var(--c-border);
+  --color-border-light: var(--c-border-light);
+
+  /* Typography */
+  --font-sans: var(--ff-body);
+
+  --text-xs: var(--fs-xs);
+  --text-sm: var(--fs-sm);
+  --text-base: var(--fs-base);
+  --text-md: var(--fs-md);
+  --text-lg: var(--fs-lg);
+  --text-xl: var(--fs-xl);
+  --text-2xl: var(--fs-2xl);
+  --text-3xl: var(--fs-3xl);
+  --text-4xl: var(--fs-4xl);
+  --text-5xl: var(--fs-5xl);
+
+  --font-light: var(--fw-light);
+  --font-normal: var(--fw-normal);
+  --font-medium: var(--fw-medium);
+  --font-semibold: var(--fw-semibold);
+  --font-bold: var(--fw-bold);
+  --font-extrabold: var(--fw-extrabold);
+
+  /* Spacing */
+  --spacing-xs: var(--space-xs);
+  --spacing-sm: var(--space-sm);
+  --spacing-md: var(--space-md);
+  --spacing-lg: var(--space-lg);
+  --spacing-xl: var(--space-xl);
+  --spacing-2xl: var(--space-2xl);
+  --spacing-3xl: var(--space-3xl);
+  --spacing-4xl: var(--space-4xl);
+  --spacing-5xl: var(--space-5xl);
+
+  /* Borders */
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-full: var(--radius-full);
+
+  /* Shadows */
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-primary: var(--shadow-primary);
+}
+
 /* ═══════════════════════════════════════════════════
    SystemLab — Clean UI / Flat Design 2.0
    Ingeniería de Software a tu Medida
@@ -1190,14 +1265,14 @@ ul, ol {
 .card__number {
   font-size: var(--fs-3xl);
   font-weight: var(--fw-extrabold);
-  color: var(--c-primary-subtle);
+  color: var(--c-primary-light);
   line-height: 1;
   margin-bottom: var(--space-md);
   transition: color var(--transition-base);
 }
 
 .card--why:hover .card__number {
-  color: var(--c-primary-glow);
+  color: var(--c-primary);
 }
 
 /* ═══════════════════════════════════════════════════

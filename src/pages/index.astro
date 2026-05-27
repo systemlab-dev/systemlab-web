@@ -1,65 +1,11 @@
-<!DOCTYPE html>
-<html lang="es">
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.jsx';
+---
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="SystemLab — Software único, negocios únicos. Creamos soluciones tecnológicas personalizadas, modernas y escalables para tu empresa.">
-  <meta name="keywords"
-    content="software a medida, desarrollo web, aplicaciones móviles, sistemas de gestión, ERP, CRM, consultoría tecnológica, SystemLab">
-  <meta name="author" content="SystemLab">
-  <title>SystemLab — Software único, negocios únicos</title>
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@700;800;900&display=swap"
-    rel="stylesheet">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="img/Logo/screen.png">
-
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-
-<body>
-
-  <!-- Scroll Progress Bar -->
-  <div class="scroll-progress" id="scrollProgress"></div>
-
-  <!-- ═══════════════════════════════════════════ -->
-  <!-- NAVBAR                                      -->
-  <!-- ═══════════════════════════════════════════ -->
-  <header class="navbar" id="navbar">
-    <div class="container navbar__inner">
-      <a href="#inicio" class="navbar__brand">
-        <svg class="navbar__logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <path d="M40 60 L100 30 L160 60 L160 140 L100 170 L40 140 Z" fill="none" stroke="currentColor"
-            stroke-width="8" />
-          <path d="M70 85 L100 70 L130 85 L130 115 L100 130 L70 115 Z" fill="currentColor" />
-          <rect x="95" y="45" width="10" height="20" fill="currentColor" transform="rotate(30 100 100)" />
-        </svg>
-        <span class="navbar__name">System<strong>Lab</strong></span>
-      </a>
-
-      <nav class="navbar__nav" id="navMenu">
-        <a href="#inicio" class="navbar__link">Inicio</a>
-        <a href="#servicios" class="navbar__link">Servicios</a>
-        <a href="#nosotros" class="navbar__link">Nosotros</a>
-        <a href="#proceso" class="navbar__link">Proceso</a>
-        <a href="portfolio.html" class="navbar__link">Portafolio</a>
-        <a href="#contacto" class="navbar__link navbar__link--cta">Cotizar Proyecto</a>
-      </nav>
-
-      <button class="navbar__toggle" id="navToggle" aria-label="Abrir menú">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-
+<Layout title="SystemLab — Software único, negocios únicos">
+  <Navbar client:load />
+  
   <main>
     <!-- ═══════════════════════════════════════════ -->
     <!-- HERO                                        -->
@@ -1001,7 +947,7 @@
     </div>
   </a>
 
-  <script src="js/main.js"></script>
-</body>
-
-</html>
+  
+  
+  <script is:inline src="/js/main.js"></script>
+</Layout>
