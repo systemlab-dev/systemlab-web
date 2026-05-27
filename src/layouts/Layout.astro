@@ -22,13 +22,32 @@ const {
   <meta name="author" content="SystemLab">
   <title>{title}</title>
 
+  <!-- Open Graph & SEO (Para que salga 'SystemLab' en Google y redes sociales) -->
+  <meta property="og:site_name" content="SystemLab">
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://systemlab.com.pe/">
+  <meta property="og:image" content="https://systemlab.com.pe/img/Logo/screen.png">
+
+  <!-- Structured Data para Google Search Console (Define el Site Name oficial) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "SystemLab",
+      "url": "https://systemlab.com.pe/"
+    }
+  </script>
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@700;800;900&display=swap" rel="stylesheet">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/img/Logo/screen.png">
+  <link rel="icon" type="image/png" href="/img/Logo/screen.png" sizes="any">
+  <link rel="apple-touch-icon" href="/img/Logo/screen.png">
 </head>
 <body>
   <slot />
