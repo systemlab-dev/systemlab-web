@@ -213,6 +213,30 @@ ul, ol {
   color: var(--c-primary);
 }
 
+/* ─── Theme Dark Utility ─── */
+.theme-dark {
+  --c-bg: #0f172a;
+  --c-bg-alt: #162032;
+  --c-surface: #1e293b;
+  --c-surface-hover: #26354c;
+  --c-text: #ffffff;
+  --c-text-secondary: #94a3b8;
+  --c-text-muted: #64748b;
+  --c-border-light: rgba(255, 255, 255, 0.05);
+  --c-border: rgba(255, 255, 255, 0.1);
+  --c-primary-subtle: rgba(16, 185, 129, 0.15);
+  background-color: var(--c-bg);
+  color: var(--c-text);
+}
+
+.theme-dark + .section-divider {
+  background-color: #0f172a;
+}
+
+.theme-dark .tag {
+  color: var(--c-primary-light);
+}
+
 /* ═══════════════════════════════════════════════════
    SCROLL PROGRESS BAR
    ═══════════════════════════════════════════════════ */
@@ -281,7 +305,7 @@ ul, ol {
   content: '';
   position: absolute;
   width: 120%;
-  height: 100%;
+  height: 200%; /* Increased to prevent gaps when skewed */
   left: -10%;
 }
 
@@ -310,8 +334,8 @@ ul, ol {
 .section-divider--why::before {
   background: var(--c-surface);
   transform: skewY(-2deg);
-  transform-origin: bottom left;
-  top: 0;
+  transform-origin: top left;
+  top: 20px;
 }
 
 .section-divider--why {
@@ -327,6 +351,27 @@ ul, ol {
 
 .section-divider--portfolio {
   background: var(--c-bg);
+}
+
+/* ─── Light to Dark Dividers ─── */
+.section-divider--light-to-dark-1 {
+  background-color: var(--c-surface);
+}
+.section-divider--light-to-dark-1::before {
+  background-color: #0f172a;
+  transform: skewY(2.5deg);
+  transform-origin: top right;
+  top: 20px;
+}
+
+.section-divider--light-to-dark-2 {
+  background-color: var(--c-surface);
+}
+.section-divider--light-to-dark-2::before {
+  background-color: #0f172a;
+  transform: skewY(-2deg);
+  transform-origin: top left;
+  top: 20px;
 }
 
 /* ═══════════════════════════════════════════════════
