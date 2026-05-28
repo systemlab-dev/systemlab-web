@@ -3,27 +3,54 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.jsx";
 ---
 
-<Layout title="SystemLab — Automatización de procesos empresariales en Perú">
+<Layout
+  title="Software y Sistema de Reservas para Barberías y Spas | SystemLab"
+>
   <Navbar client:load />
 
   <main>
     <!-- ═══════════════════════════════════════════ -->
     <!-- HERO                                        -->
     <!-- ═══════════════════════════════════════════ -->
-    <section class="hero hero--flat" id="inicio">
-      <div class="container hero__inner">
-        <div class="hero__content" data-reveal="fade-right">
-          <h1 class="hero__title">
-            Tu empresa no necesita un "software a medida".<br />
-            <span class="text-accent">Necesita dejar de botar plata.</span>
-          </h1>
-          <p class="hero__subtitle">
-            No somos una fábrica de sistemas genéricos que tardan meses. Somos cirujanos tecnológicos: entramos, detectamos tu fuga de dinero, construimos la herramienta específica para taparla y salimos en semanas. Fin.
-          </p>
+    <section class="hero-carousel" id="inicio">
+      <!-- Slides -->
+      <div class="hero-carousel__track" id="heroTrack">
+        <div
+          class="hero-carousel__slide active"
+          style="background-image: url('/img/hero-slide-1.avif')"
+        >
+          <div class="hero-carousel__overlay"></div>
+        </div>
+        <div
+          class="hero-carousel__slide"
+          style="background-image: url('/img/hero-slide-2.avif')"
+        >
+          <div class="hero-carousel__overlay"></div>
+        </div>
+        <div
+          class="hero-carousel__slide"
+          style="background-image: url('/img/hero-slide-3.avif')"
+        >
+          <div class="hero-carousel__overlay"></div>
+        </div>
+      </div>
 
-          <div class="hero__actions">
-            <a href="#contacto" class="btn btn--primary">
-              Agendar Auditoría de Diagnóstico
+      <!-- Content overlay -->
+      <div class="hero-carousel__content">
+        <div class="container">
+          <h1 class="hero-carousel__title">
+            Tu Barbería no necesita otro "software genérico".<br />
+            <span class="text-accent">Necesita multiplicar sus ganancias.</span>
+          </h1>
+          <p class="hero-carousel__subtitle">
+            Somos la única agencia tecnológica enfocada exclusivamente en el
+            rubro de Barberías y Spas. Desarrollamos sistemas de reservas y
+            gestión que acaban con el desorden, llenan tu agenda en automático y
+            te liberan de estar pegado al WhatsApp.
+          </p>
+          <div class="hero-carousel__actions">
+            <a href="#contacto" class="btn btn--primary btn--large">
+              Descubrir Cuánto Estás Perdiendo
               <svg
                 width="18"
                 height="18"
@@ -37,48 +64,28 @@ import Navbar from "../components/Navbar.jsx";
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
               </svg>
             </a>
-            <a href="#servicios" class="btn btn--outline"> Ver cómo operamos </a>
-          </div>
-        </div>
-
-        <div
-          class="hero__visual"
-          data-reveal="fade-left"
-          data-reveal-delay="200"
-        >
-          <div class="hero__logo-wrap">
-            <div class="hero__orbit hero__orbit--1"></div>
-            <div class="hero__orbit hero__orbit--2"></div>
-            <svg
-              class="hero__logo-main"
-              viewBox="0 0 200 200"
-              xmlns="http://www.w3.org/2000/svg"
+            <a href="#servicios" class="btn btn--outline btn--large"
+              >Ver cómo operamos</a
             >
-              <path
-                d="M40 60 L100 30 L160 60 L160 140 L100 170 L40 140 Z"
-                fill="rgba(16, 185, 129, 0.1)"
-                stroke="var(--c-primary)"
-                stroke-width="2"></path>
-              <path
-                d="M55 70 L100 45 L145 70 L145 130 L100 155 L55 130 Z"
-                fill="none"
-                stroke="var(--c-primary)"
-                stroke-width="1.5"></path>
-              <path
-                d="M70 85 L100 70 L130 85 L130 115 L100 130 L70 115 Z"
-                fill="var(--c-primary)"></path>
-              <text
-                x="100"
-                y="108"
-                text-anchor="middle"
-                fill="#fff"
-                font-family="Inter, sans-serif"
-                font-size="24"
-                font-weight="800">SL</text
-              >
-            </svg>
           </div>
         </div>
+      </div>
+
+      <!-- Navigation dots -->
+      <div class="hero-carousel__dots" id="heroDots">
+        <button
+          class="hero-carousel__dot active"
+          data-slide="0"
+          aria-label="Slide 1"></button>
+        <button class="hero-carousel__dot" data-slide="1" aria-label="Slide 2"
+        ></button>
+        <button class="hero-carousel__dot" data-slide="2" aria-label="Slide 3"
+        ></button>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="hero-carousel__progress">
+        <div class="hero-carousel__progress-bar" id="heroProgress"></div>
       </div>
     </section>
 
@@ -99,13 +106,16 @@ import Navbar from "../components/Navbar.jsx";
             <div class="hero-project-card__content">
               <h3>Florería: Canal de Ventas Automatizado</h3>
               <p>
-                Catálogo digital donde el cliente compra y paga sin fricciones, mientras tú controlas tu inventario sin depender de intermediarios.
+                Catálogo digital donde el cliente compra y paga sin fricciones,
+                mientras tú controlas tu inventario sin depender de
+                intermediarios.
               </p>
               <a
                 href="https://floreria-tiendaonline.infinityfreeapp.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="btn btn--outline btn--small">Ver Proyecto</a>
+                class="btn btn--primary btn--small">Ver Proyecto</a
+              >
             </div>
           </div>
           <div
@@ -121,13 +131,16 @@ import Navbar from "../components/Navbar.jsx";
             <div class="hero-project-card__content">
               <h3>Barbería: Gestor Automático de Citas</h3>
               <p>
-                Agenda digital que organiza tus reservas, evita cruces de horarios y libera a tu equipo para que se enfoque en atender, no en contestar el teléfono.
+                Agenda digital que organiza tus reservas, evita cruces de
+                horarios y libera a tu equipo para que se enfoque en atender, no
+                en contestar el teléfono.
               </p>
               <a
                 href="https://sistema-reservas-barberia.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="btn btn--outline btn--small">Ver Proyecto</a>
+                class="btn btn--primary btn--small">Ver Proyecto</a
+              >
             </div>
           </div>
           <div
@@ -143,13 +156,15 @@ import Navbar from "../components/Navbar.jsx";
             <div class="hero-project-card__content">
               <h3>Corporación Raunass: Sucursal Digital de Alto Rendimiento</h3>
               <p>
-                Presencia en internet optimizada para que tus clientes corporativos te encuentren primero y confíen en ti al instante.
+                Presencia en internet optimizada para que tus clientes
+                corporativos te encuentren primero y confíen en ti al instante.
               </p>
               <a
                 href="https://corporacionraunass.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="btn btn--outline btn--small">Ver Proyecto</a>
+                class="btn btn--primary btn--small">Ver Proyecto</a
+              >
             </div>
           </div>
         </div>
@@ -158,47 +173,128 @@ import Navbar from "../components/Navbar.jsx";
 
     <!-- Diagonal section divider -->
     <div class="section-divider section-divider--hero"></div>
-
     <!-- ═══════════════════════════════════════════ -->
     <!-- TRUST BAR (Confianza)                       -->
     <!-- ═══════════════════════════════════════════ -->
     <section class="trust-bar">
       <div class="container">
         <div class="trust-bar__grid">
-          <div class="trust-bar__item" data-reveal="fade-up" data-reveal-delay="0">
+          <div
+            class="trust-bar__item"
+            data-reveal="fade-up"
+            data-reveal-delay="0"
+          >
             <div class="trust-bar__icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><circle cx="12" cy="12" r="10"></circle><line
+                  x1="12"
+                  y1="8"
+                  x2="12"
+                  y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"
+                ></line></svg
+              >
             </div>
             <div class="trust-bar__text">
-              <strong>Enfoque en ROI</strong>
-              <span>Si la herramienta no te ahorra tiempo o dinero medible, no la construimos.</span>
+              <strong>Agendas Llenas</strong>
+              <span
+                >Eliminamos los espacios vacíos y reducimos al mínimo los
+                clientes que no asisten.</span
+              >
             </div>
           </div>
-          <div class="trust-bar__item" data-reveal="fade-up" data-reveal-delay="100">
+          <div
+            class="trust-bar__item"
+            data-reveal="fade-up"
+            data-reveal-delay="100"
+          >
             <div class="trust-bar__icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><path
+                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                ></path><polyline points="14 2 14 8 20 8"></polyline><line
+                  x1="16"
+                  y1="13"
+                  x2="8"
+                  y2="13"></line><line x1="16" y1="17" x2="8" y2="17"
+                ></line><polyline points="10 9 9 9 8 9"></polyline></svg
+              >
             </div>
             <div class="trust-bar__text">
-              <strong>Transparencia Total</strong>
-              <span>Cero cajas negras. Ves cada avance y cada línea de código desde el día uno.</span>
+              <strong>Cero Comisiones</strong>
+              <span
+                >A diferencia de otras apps, nuestro sistema es tuyo. No te
+                cobramos por cada reserva que entra.</span
+              >
             </div>
           </div>
-          <div class="trust-bar__item" data-reveal="fade-up" data-reveal-delay="200">
+          <div
+            class="trust-bar__item"
+            data-reveal="fade-up"
+            data-reveal-delay="200"
+          >
             <div class="trust-bar__icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><circle cx="12" cy="12" r="10"></circle><polyline
+                  points="12 6 12 12 16 14"></polyline></svg
+              >
             </div>
             <div class="trust-bar__text">
-              <strong>Ejecución Rápida</strong>
-              <span>Resultados en semanas, no en semestres. Velocidad quirúrgica para tu negocio.</span>
+              <strong>Especialistas en tu Rubro</strong>
+              <span
+                >Conocemos el día a día de una barbería y un spa. Sabemos
+                exactamente dónde pierdes dinero.</span
+              >
             </div>
           </div>
-          <div class="trust-bar__item" data-reveal="fade-up" data-reveal-delay="300">
+          <div
+            class="trust-bar__item"
+            data-reveal="fade-up"
+            data-reveal-delay="300"
+          >
             <div class="trust-bar__icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><rect x="3" y="11" width="18" height="11" rx="2" ry="2"
+                ></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg
+              >
             </div>
             <div class="trust-bar__text">
-              <strong>Propiedad del Código</strong>
-              <span>Tú eres el dueño. Cero comisiones, cero licencias abusivas, cero dependencias.</span>
+              <strong>Fácil de Usar</strong>
+              <span
+                >Diseñado para que cualquier miembro de tu equipo lo entienda en
+                5 minutos. Sin complicaciones.</span
+              >
             </div>
           </div>
         </div>
@@ -208,18 +304,18 @@ import Navbar from "../components/Navbar.jsx";
     <!-- ═══════════════════════════════════════════ -->
     <!-- SERVICIOS                                   -->
     <!-- ═══════════════════════════════════════════ -->
-    <section class="services theme-dark" id="servicios">
+    <section class="services" id="servicios">
       <div class="services__bg-pattern"></div>
       <div class="container">
         <div class="section-header" data-reveal="fade-up">
-          <span class="section-header__tag">Nuestros Servicios</span>
           <h2 class="section-header__title">
-            Olvida el "Desarrollo Web".<br /><span class="text-accent"
-              >Hacemos esto:</span
+            Olvida el desorden.<br /><span class="text-accent"
+              >Construimos máquinas de venta:</span
             >
           </h2>
           <p class="section-header__desc">
-            No vendemos líneas de código. Vendemos herramientas que taparán tus fugas de dinero y a tus empleados les dará gusto usar.
+            No te vendemos una página web estática. Te entregamos un sistema
+            comercial completo para que ganes más trabajando menos.
           </p>
         </div>
 
@@ -277,15 +373,12 @@ import Navbar from "../components/Navbar.jsx";
                   stroke-linejoin="round"></polyline>
               </svg>
             </div>
-            <h3 class="card__title">Migración de Procesos a la Nube</h3>
+            <h3 class="card__title">Agendamiento Automático 24/7</h3>
             <p class="card__desc">
-              Tienes a tu equipo atrapado cruzando datos en Excel. Eliminamos el error humano construyendo un panel privado y seguro donde tu información fluye automáticamente y nada se borra por accidente.
+              Tus clientes podrán reservar su corte o masaje a las 3 de la
+              mañana desde su celular. El sistema verifica disponibilidad y
+              aparta el cupo sin que tú intervengas.
             </p>
-            <div class="card__tags">
-              <span class="tag">Sin Errores</span>
-              <span class="tag">Privado</span>
-              <span class="tag">Automático</span>
-            </div>
           </div>
 
           <!-- Servicio 2 -->
@@ -326,15 +419,12 @@ import Navbar from "../components/Navbar.jsx";
                   stroke-linejoin="round"></path>
               </svg>
             </div>
-            <h3 class="card__title">Canales de Venta Directa</h3>
+            <h3 class="card__title">Recordatorios Anti-Faltas</h3>
             <p class="card__desc">
-              Pierdes ventas por procesos de pago confusos o catálogos lentos. Diseñamos plataformas ultra-rápidas donde el cliente elige y compra sin fricción. Sin depender de terceros ni pagar comisiones por venta.
+              ¿Harto de los clientes que agendan y no llegan? Nuestro sistema
+              envía alertas automáticas para que confirmen o cancelen a tiempo,
+              permitiéndote ceder el espacio a otro cliente.
             </p>
-            <div class="card__tags">
-              <span class="tag">Rápido</span>
-              <span class="tag">Cero Comisiones</span>
-              <span class="tag">UX Fluido</span>
-            </div>
           </div>
 
           <!-- Servicio 3 -->
@@ -393,13 +483,10 @@ import Navbar from "../components/Navbar.jsx";
             </div>
             <h3 class="card__title">Automatización de Tareas Repetitivas</h3>
             <p class="card__desc">
-              Tus empleados pierden 4 horas al día haciendo trabajo manual de "copiar y pegar". Escribimos los flujos invisibles que hacen ese trabajo por ellos para que se enfoquen en vender y operar.
+              Tus empleados pierden 4 horas al día haciendo trabajo manual de
+              "copiar y pegar". Escribimos los flujos invisibles que hacen ese
+              trabajo por ellos para que se enfoquen en vender y operar.
             </p>
-            <div class="card__tags">
-              <span class="tag">Cero Manual</span>
-              <span class="tag">Flujos</span>
-              <span class="tag">Productividad</span>
-            </div>
           </div>
 
           <!-- Servicio 4 -->
@@ -449,15 +536,12 @@ import Navbar from "../components/Navbar.jsx";
                   stroke-width="2.5"></line>
               </svg>
             </div>
-            <h3 class="card__title">Conexión de Software Empresarial</h3>
+            <h3 class="card__title">Sistema de Fidelización</h3>
             <p class="card__desc">
-              Tienes 3 sistemas (CRM, Facturación, Inventario) que no se hablan entre sí. Construimos los puentes exactos para que la información fluya sola y mates la doble digitación de una vez por todas.
+              Haz que tus clientes regresen una y otra vez. Implementamos
+              programas de puntos y membresías VIP para que la competencia jamás
+              pueda robarte a tu clientela frecuente.
             </p>
-            <div class="card__tags">
-              <span class="tag">Integración</span>
-              <span class="tag">APIs</span>
-              <span class="tag">Cero Doble Digitación</span>
-            </div>
           </div>
 
           <!-- Servicio 5 -->
@@ -507,15 +591,12 @@ import Navbar from "../components/Navbar.jsx";
                   stroke-linejoin="round"></path>
               </svg>
             </div>
-            <h3 class="card__title">Auditoría de Cuellos de Botella</h3>
+            <h3 class="card__title">Páginas Web que Sí Venden</h3>
             <p class="card__desc">
-              Sabes que pierdes plata en tu operación, pero no sabes exactamente dónde. Analizamos a fondo los procesos técnicos de tu empresa y te entregamos un plan de acción directo para tapar la hemorragia.
+              Creamos sitios web diseñados exclusivamente para convencer.
+              Mostramos tu local, tus trabajos y testimonios de tal forma que el
+              cliente sienta que eres su mejor opción.
             </p>
-            <div class="card__tags">
-              <span class="tag">Diagnóstico</span>
-              <span class="tag">Estrategia</span>
-              <span class="tag">Plan Acción</span>
-            </div>
           </div>
 
           <!-- Servicio 6 -->
@@ -560,15 +641,12 @@ import Navbar from "../components/Navbar.jsx";
                 <circle cx="24" cy="24" r="4" fill="currentColor"></circle>
               </svg>
             </div>
-            <h3 class="card__title">Continuidad Operativa</h3>
+            <h3 class="card__title">Pago Seguro y Adelantado</h3>
             <p class="card__desc">
-              Un sistema caído es dinero perdido. Mantenemos tu infraestructura limpia, optimizada y vigilada las 24 horas. Prevenimos el desastre antes de que ocurra.
+              Permite que tus clientes paguen el servicio (o un adelanto) al
+              momento de reservar. Aseguras tu dinero y reduces radicalmente las
+              inasistencias en fechas clave.
             </p>
-            <div class="card__tags">
-              <span class="tag">Monitoreo</span>
-              <span class="tag">Uptime</span>
-              <span class="tag">24/7</span>
-            </div>
           </div>
         </div>
       </div>
@@ -643,33 +721,33 @@ import Navbar from "../components/Navbar.jsx";
                   >
                     <stop
                       offset="0%"
-                      style="stop-color:#10b981;stop-opacity:0.15"></stop>
+                      style="stop-color:#f59e0b;stop-opacity:0.15"></stop>
                     <stop
                       offset="100%"
-                      style="stop-color:#059669;stop-opacity:0.05"></stop>
+                      style="stop-color:#d97706;stop-opacity:0.05"></stop>
                   </linearGradient>
                 </defs>
                 <path
                   d="M60 90 L150 45 L240 90 L240 210 L150 255 L60 210 Z"
                   fill="url(#hexGrad)"
-                  stroke="#10b981"
+                  stroke="var(--c-primary)"
                   stroke-width="2"
                   opacity="0.6"></path>
                 <path
                   d="M90 110 L150 80 L210 110 L210 190 L150 220 L90 190 Z"
                   fill="none"
-                  stroke="#10b981"
+                  stroke="var(--c-primary)"
                   stroke-width="1.5"
                   opacity="0.4"></path>
                 <path
                   d="M115 125 L150 108 L185 125 L185 175 L150 192 L115 175 Z"
-                  fill="#10b981"
+                  fill="var(--c-primary)"
                   opacity="0.2"></path>
                 <text
                   x="150"
                   y="155"
                   text-anchor="middle"
-                  fill="#10b981"
+                  fill="var(--c-primary)"
                   font-family="Inter, sans-serif"
                   font-size="18"
                   font-weight="700"
@@ -685,16 +763,21 @@ import Navbar from "../components/Navbar.jsx";
           data-reveal="fade-left"
           data-reveal-delay="200"
         >
-          <span class="section-header__tag">Sobre Nosotros</span>
           <h2 class="section-header__title">
-            No somos una fábrica de software.<br />
-            <span class="text-accent">Somos tus aliados en rentabilidad</span>
+            Tu negocio es la belleza.<br />
+            <span class="text-accent">El nuestro es llenarte el local.</span>
           </h2>
           <p class="about__text">
-            Las agencias tradicionales te venden horas de programación y sistemas genéricos que nadie usa. Nosotros operamos diferente: entramos a tu empresa, identificamos el cuello de botella que te está costando dinero, y construimos la herramienta exacta para eliminarlo.
+            Entendemos tu frustración: pagar plataformas que te cobran un
+            porcentaje por cada cita, o llevar todo en una libreta de papel
+            donde se cruzan los horarios y se pierden números.
           </p>
           <p class="about__text">
-            No te cobramos por líneas de código, nos enfocamos en el <strong>impacto financiero de la solución</strong>. Nuestro único objetivo es que la tecnología te devuelva tiempo y aumente tu margen de ganancia.
+            Nosotros creamos el sistema definitivo para que tú te dediques a
+            hacer tu arte, mientras nuestra plataforma se encarga de vender,
+            agendar y cobrar. Nos enfocamos en un solo objetivo: <strong
+              >aumentar tus ingresos y reducir tu estrés</strong
+            >.
           </p>
 
           <div class="about__stats">
@@ -739,11 +822,10 @@ import Navbar from "../components/Navbar.jsx";
     <!-- ═══════════════════════════════════════════ -->
     <!-- POR QUÉ ELEGIRNOS (Confianza)              -->
     <!-- ═══════════════════════════════════════════ -->
-    <section class="why-us theme-dark">
+    <section class="why-us">
       <div class="why-us__bg-pattern"></div>
       <div class="container">
         <div class="section-header" data-reveal="fade-up">
-          <span class="section-header__tag">¿Por qué SystemLab?</span>
           <h2 class="section-header__title">
             Razones para <span class="text-accent">confiar</span> en nosotros
           </h2>
@@ -756,10 +838,10 @@ import Navbar from "../components/Navbar.jsx";
             data-reveal-delay="0"
           >
             <div class="card__number">01</div>
-            <h3 class="card__title">100% Personalizado</h3>
+            <h3 class="card__title">Hecho para tu Nicho</h3>
             <p class="card__desc">
-              Cada solución se construye desde cero, adaptada exactamente a tus
-              necesidades. Nada de plantillas, nada genérico.
+              No trabajamos con restaurantes ni inmobiliarias. Solo hacemos
+              sistemas para salones, barberías y spas.
             </p>
           </div>
           <div
@@ -768,10 +850,10 @@ import Navbar from "../components/Navbar.jsx";
             data-reveal-delay="100"
           >
             <div class="card__number">02</div>
-            <h3 class="card__title">Transparencia Total</h3>
+            <h3 class="card__title">Tu Base de Datos</h3>
             <p class="card__desc">
-              Acceso a tu repositorio en GitHub desde el día uno. Ves cada
-              avance, cada línea de código, en tiempo real.
+              La lista de tus clientes es tuya, no de una app de terceros.
+              Construimos tu propia base de datos intocable.
             </p>
           </div>
           <div
@@ -780,10 +862,10 @@ import Navbar from "../components/Navbar.jsx";
             data-reveal-delay="200"
           >
             <div class="card__number">03</div>
-            <h3 class="card__title">Metodología Ágil</h3>
+            <h3 class="card__title">Soporte Directo</h3>
             <p class="card__desc">
-              Entregas incrementales con feedback constante. No esperas meses —
-              ves resultados desde las primeras semanas.
+              Si tienes un problema un viernes por la tarde con local lleno, ahí
+              estaremos. No te mandamos a un foro de dudas.
             </p>
           </div>
           <div
@@ -792,10 +874,10 @@ import Navbar from "../components/Navbar.jsx";
             data-reveal-delay="0"
           >
             <div class="card__number">04</div>
-            <h3 class="card__title">Tecnología Moderna</h3>
+            <h3 class="card__title">Sin Mensualidades Eternas</h3>
             <p class="card__desc">
-              Usamos las herramientas y frameworks más actuales del mercado para
-              garantizar rendimiento y escalabilidad.
+              A diferencia de las apps populares, creamos un sistema propio para
+              tu marca, sin rentas ocultas.
             </p>
           </div>
           <div
@@ -804,10 +886,10 @@ import Navbar from "../components/Navbar.jsx";
             data-reveal-delay="100"
           >
             <div class="card__number">05</div>
-            <h3 class="card__title">Soporte Post-Entrega</h3>
+            <h3 class="card__title">Marca Impecable</h3>
             <p class="card__desc">
-              No desaparecemos después de entregar. Brindamos acompañamiento,
-              mantenimiento y soporte continuo.
+              Tus clientes agendarán en un sitio web con tu propio nombre y
+              logo. Te verás más grande que tu competencia.
             </p>
           </div>
           <div
@@ -816,10 +898,10 @@ import Navbar from "../components/Navbar.jsx";
             data-reveal-delay="200"
           >
             <div class="card__number">06</div>
-            <h3 class="card__title">Resultados Medibles</h3>
+            <h3 class="card__title">Más Tiempo Libre</h3>
             <p class="card__desc">
-              Cada proyecto tiene KPIs claros. Medimos el impacto de nuestra
-              tecnología en tu negocio.
+              Olvida llegar a casa a organizar la agenda de mañana. El sistema
+              hace todo el trabajo administrativo por ti.
             </p>
           </div>
         </div>
@@ -836,7 +918,6 @@ import Navbar from "../components/Navbar.jsx";
       <div class="process__bg-diagonal"></div>
       <div class="container">
         <div class="section-header" data-reveal="fade-up">
-          <span class="section-header__tag">Nuestro Proceso</span>
           <h2 class="section-header__title">
             Del problema a la <span class="text-accent">solución</span>
           </h2>
@@ -871,11 +952,10 @@ import Navbar from "../components/Navbar.jsx";
                   <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 </svg>
               </div>
-              <h3>Análisis & Descubrimiento</h3>
+              <h3>Analizamos tus Números</h3>
               <p>
-                Nos sumergimos en tu negocio. Entendemos tus procesos,
-                identificamos cuellos de botella y definimos los objetivos del
-                proyecto.
+                Vemos cuántas sillas tienes, cómo es tu flujo de clientes y
+                descubrimos dónde estás perdiendo reservas y dinero actualmente.
               </p>
             </div>
           </div>
@@ -904,10 +984,10 @@ import Navbar from "../components/Navbar.jsx";
                   <circle cx="11" cy="11" r="2"></circle>
                 </svg>
               </div>
-              <h3>Diseño & Arquitectura</h3>
+              <h3>Creamos tu Máquina Comercial</h3>
               <p>
-                Creamos prototipos visuales y definimos la arquitectura técnica.
-                Validamos contigo antes de escribir una sola línea de código.
+                Armamos tu sistema de reservas y página web. Adaptamos los
+                servicios, precios y horarios de tu personal al milímetro.
               </p>
             </div>
           </div>
@@ -935,10 +1015,10 @@ import Navbar from "../components/Navbar.jsx";
                   <line x1="14" y1="4" x2="10" y2="20"></line>
                 </svg>
               </div>
-              <h3>Desarrollo & Testing</h3>
+              <h3>Lanzamiento y Capacitación</h3>
               <p>
-                Construimos tu solución con sprints iterativos. Pruebas
-                continuas garantizan calidad en cada entrega parcial.
+                Te enseñamos a ti y a tu equipo a usar el sistema en pocos
+                minutos (es sumamente intuitivo). Lo ponemos en marcha.
               </p>
             </div>
           </div>
@@ -965,10 +1045,10 @@ import Navbar from "../components/Navbar.jsx";
                   <polyline points="22 4 12 14.01 9 11.01"></polyline>
                 </svg>
               </div>
-              <h3>Entrega & Soporte</h3>
+              <h3>Crecimiento en Automático</h3>
               <p>
-                Desplegamos tu proyecto, capacitamos a tu equipo y te
-                acompañamos con soporte técnico continuo.
+                Tus clientes empiezan a reservar solos. Tú ves cómo se llena la
+                agenda y nosotros te damos soporte siempre.
               </p>
             </div>
           </div>
@@ -982,10 +1062,9 @@ import Navbar from "../components/Navbar.jsx";
     <!-- ═══════════════════════════════════════════ -->
     <!-- PORTAFOLIO                                  -->
     <!-- ═══════════════════════════════════════════ -->
-    <section class="portfolio theme-dark" id="portafolio">
+    <section class="portfolio" id="portafolio">
       <div class="container">
         <div class="section-header" data-reveal="fade-up">
-          <span class="section-header__tag">Portafolio</span>
           <h2 class="section-header__title">
             Proyectos que <span class="text-accent">hablan</span> por nosotros
           </h2>
@@ -1007,15 +1086,11 @@ import Navbar from "../components/Navbar.jsx";
               </div>
             </div>
             <div class="card__project-info">
-              <h3 class="card__title">Florería: Canal de Ventas Automatizado</h3>
+              <h3 class="card__title">Sistema de Gestión Clínica</h3>
               <p class="card__desc">
-                Catálogo digital donde tu cliente compra y paga sin fricciones, mientras tú controlas tu inventario sin depender de intermediarios ni comisiones abusivas.
+                Desarrollo de plataforma integral para control de pacientes y
+                citas.
               </p>
-              <div class="card__tags">
-                <span class="tag">E-Commerce</span>
-                <span class="tag">Panel Administrativo</span>
-                <span class="tag">Autogestionable</span>
-              </div>
             </div>
           </div>
 
@@ -1030,15 +1105,11 @@ import Navbar from "../components/Navbar.jsx";
               </div>
             </div>
             <div class="card__project-info">
-              <h3 class="card__title">Barbería: Gestor Automático de Citas</h3>
+              <h3 class="card__title">E-commerce B2B</h3>
               <p class="card__desc">
-                Agenda digital que organiza tus reservas, evita cruces de horarios y libera a tu equipo para que se enfoque en atender al cliente, no en contestar mensajes.
+                Plataforma de ventas mayoristas con integración de inventario en
+                tiempo real.
               </p>
-              <div class="card__tags">
-                <span class="tag">Full-Stack</span>
-                <span class="tag">Tiempo Real</span>
-                <span class="tag">Sistema de Reservas</span>
-              </div>
             </div>
           </div>
 
@@ -1053,15 +1124,11 @@ import Navbar from "../components/Navbar.jsx";
               </div>
             </div>
             <div class="card__project-info">
-              <h3 class="card__title">Corporación Raunass: Sucursal Digital</h3>
+              <h3 class="card__title">App Logística Automotriz</h3>
               <p class="card__desc">
-                Presencia en internet optimizada para que tus clientes corporativos te encuentren primero en Google y confíen en tu empresa al instante.
+                Aplicación móvil para rastreo y gestión de flotas vehiculares
+                empresariales.
               </p>
-              <div class="card__tags">
-                <span class="tag">Web Corporativa</span>
-                <span class="tag">Alto Rendimiento</span>
-                <span class="tag">Posicionamiento</span>
-              </div>
             </div>
           </div>
         </div>
@@ -1078,7 +1145,6 @@ import Navbar from "../components/Navbar.jsx";
       <div class="testimonials__bg-diagonal"></div>
       <div class="container">
         <div class="section-header" data-reveal="fade-up">
-          <span class="section-header__tag">Testimonios</span>
           <h2 class="section-header__title">
             Lo que dicen nuestros <span class="text-accent">clientes</span>
           </h2>
@@ -1155,13 +1221,15 @@ import Navbar from "../components/Navbar.jsx";
                 </svg>
               </div>
               <p class="card__quote">
-                "Mi equipo perdía hasta 4 horas diarias cruzando datos a mano entre hojas de cálculo y corrigiendo errores de tipeo. SystemLab nos construyó una herramienta donde la información fluye sola. Hoy mi personal se dedica a despachar más rápido, no a tipear datos."
+                "Nos volvía locos el teléfono sonando en pleno corte, o la gente
+                escribiendo a medianoche. Ahora el 80% de nuestros clientes
+                agenda directo en la web solos. Recuperé mi paz mental."
               </p>
               <div class="card__author">
-                <div class="card__avatar card__avatar--1">MR</div>
+                <div class="card__avatar card__avatar--1">JP</div>
                 <div>
-                  <strong>María Rodríguez</strong>
-                  <span>CEO, Logística Express</span>
+                  <strong>Juan Pablo</strong>
+                  <span>Dueño, The Classic Barber</span>
                 </div>
               </div>
             </div>
@@ -1230,13 +1298,15 @@ import Navbar from "../components/Navbar.jsx";
                 </svg>
               </div>
               <p class="card__quote">
-                "Estaba cansado de agencias que te cobran y desaparecen por meses. SystemLab fue transparente: entendieron exactamente dónde estábamos perdiendo dinero y nos entregaron una solución a medida, sin intentar vendernos tecnología de sobra que no íbamos a usar."
+                "Pagábamos muchísimo en comisiones a una app famosa. SystemLab
+                nos hizo un sistema idéntico pero 100% nuestro. Esa inversión se
+                pagó sola en dos meses y ahora el dinero se queda en casa."
               </p>
               <div class="card__author">
-                <div class="card__avatar card__avatar--2">CG</div>
+                <div class="card__avatar card__avatar--2">LF</div>
                 <div>
-                  <strong>Carlos García</strong>
-                  <span>Director de TI, FinanPro</span>
+                  <strong>Luis Fernández</strong>
+                  <span>Gerente, Spa Zen Vital</span>
                 </div>
               </div>
             </div>
@@ -1305,13 +1375,15 @@ import Navbar from "../components/Navbar.jsx";
                 </svg>
               </div>
               <p class="card__quote">
-                "Teníamos un desastre operativo con las reservas y los expedientes. Gastamos en programas 'estándar' pero ninguno se adaptaba a nuestra forma real de trabajar. SystemLab frenó el caos operativo diseñando exactamente la herramienta que nuestra clínica necesitaba."
+                "Quería que mi local se viera exclusivo, no uno más. La página
+                que armaron con el motor de reservas incorporado es tan elegante
+                que empezamos a cobrar más por los cortes sin quejas."
               </p>
               <div class="card__author">
-                <div class="card__avatar card__avatar--3">AL</div>
+                <div class="card__avatar card__avatar--3">MR</div>
                 <div>
-                  <strong>Ana López</strong>
-                  <span>Gerente General, MediCorp</span>
+                  <strong>Miguel Ramos</strong>
+                  <span>Fundador, Black Razor Studio</span>
                 </div>
               </div>
             </div>
@@ -1361,12 +1433,21 @@ import Navbar from "../components/Navbar.jsx";
     <section class="cta">
       <div class="cta__bg-pattern"></div>
       <div class="container cta__inner" data-reveal="zoom-in">
-        <h2 class="cta__title">¿Cuánto dinero vas a seguir perdiendo este mes por culpa de procesos manuales?</h2>
+        <h2 class="cta__title">
+          ¿Cuántas citas perdiste hoy por no contestar rápido el WhatsApp?
+        </h2>
         <p class="cta__desc">
-          Cada día que tu equipo pasa copiando y pegando datos, o atendiendo pedidos a mano, tu rentabilidad se esfuma. Hablemos de números y cortemos esa hemorragia operativa hoy mismo.
+          Cada mensaje que se queda sin responder mientras estás atendiendo es
+          dinero que se va a tu competencia. Deja de perder plata y automatiza
+          tus reservas hoy mismo.
         </p>
-        <a href="https://wa.me/51970125912?text=Hola,%20quiero%20conversar%20sobre%20cómo%20optimizar%20los%20procesos%20manuales%20en%20mi%20empresa%20y%20dejar%20de%20perder%20tiempo." target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--large">
-          Agendar Diagnóstico por WhatsApp
+        <a
+          href="https://wa.me/51970125912?text=Hola,%20quiero%20conversar%20sobre%20cómo%20optimizar%20los%20procesos%20manuales%20en%20mi%20empresa%20y%20dejar%20de%20perder%20tiempo."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn--primary btn--large"
+        >
+          Saber Cuánto Cuesta para Mi Local
           <svg
             width="20"
             height="20"
@@ -1390,12 +1471,13 @@ import Navbar from "../components/Navbar.jsx";
       <div class="contact__bg-shapes"></div>
       <div class="container contact__inner">
         <div class="contact__info" data-reveal="fade-right">
-          <span class="section-header__tag">Contacto</span>
           <h2 class="section-header__title">
             Hablemos de tu <span class="text-accent">negocio</span>
           </h2>
           <p class="contact__text">
-            Nada de formularios lentos ni correos automáticos. Escríbenos directo al WhatsApp. Cuéntanos dónde se atasca tu operación y evaluaremos de inmediato si podemos tapar esa fuga de dinero.
+            Nada de vendedores fastidiosos. Escríbenos por WhatsApp, cuéntanos
+            cuántos barberos o cabinas tienes, y te diremos exactamente cómo un
+            sistema propio te hará ganar más dinero.
           </p>
 
           <div class="contact__details">
@@ -1516,13 +1598,39 @@ import Navbar from "../components/Navbar.jsx";
           data-reveal="fade-left"
           data-reveal-delay="200"
         >
-          <div class="contact__direct-action" style="background: var(--c-surface); padding: var(--space-2xl); border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,0.05); text-align: center;">
-            <h3 style="font-size: var(--fs-xl); color: #fff; margin-bottom: var(--space-md); font-weight: 800;">¿Listo para optimizar tu operación?</h3>
-            <p style="color: #94a3b8; margin-bottom: var(--space-xl); line-height: 1.6;">Atención directa e inmediata. Háblanos de tu cuello de botella operativo y lo analizamos en minutos.</p>
-            <a href="https://wa.me/51970125912?text=Hola,%20quiero%20conversar%20sobre%20cómo%20optimizar%20los%20procesos%20manuales%20en%20mi%20empresa%20y%20dejar%20de%20perder%20tiempo." target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--large" style="width: 100%; justify-content: center; font-size: var(--fs-lg); padding: 20px;">
+          <div
+            class="contact__direct-action"
+            style="background: var(--c-surface); padding: var(--space-2xl); border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,0.05); text-align: center;"
+          >
+            <h3
+              style="font-size: var(--fs-xl); color: #fff; margin-bottom: var(--space-md); font-weight: 800;"
+            >
+              ¿Listo para optimizar tu operación?
+            </h3>
+            <p
+              style="color: #94a3b8; margin-bottom: var(--space-xl); line-height: 1.6;"
+            >
+              Atención directa e inmediata. Háblanos de tu cuello de botella
+              operativo y lo analizamos en minutos.
+            </p>
+            <a
+              href="https://wa.me/51970125912?text=Hola,%20quiero%20conversar%20sobre%20cómo%20optimizar%20los%20procesos%20manuales%20en%20mi%20empresa%20y%20dejar%20de%20perder%20tiempo."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn--primary btn--large"
+              style="width: 100%; justify-content: center; font-size: var(--fs-lg); padding: 20px;"
+            >
               Iniciar Chat en WhatsApp
-              <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" style="margin-left: 10px;">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width="24"
+                height="24"
+                style="margin-left: 10px;"
+              >
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                ></path>
               </svg>
             </a>
           </div>
@@ -1547,17 +1655,17 @@ import Navbar from "../components/Navbar.jsx";
             <path
               d="M40 60 L100 30 L160 60 L160 140 L100 170 L40 140 Z"
               fill="none"
-              stroke="#10b981"
+              stroke="var(--c-primary)"
               stroke-width="8"></path>
             <path
               d="M70 85 L100 70 L130 85 L130 115 L100 130 L70 115 Z"
-              fill="#10b981"></path>
+              fill="var(--c-primary)"></path>
             <rect
               x="95"
               y="45"
               width="10"
               height="20"
-              fill="#10b981"
+              fill="var(--c-primary)"
               transform="rotate(30 100 100)"></rect>
           </svg>
           <span class="navbar__name" style="color:#fff"
@@ -1565,8 +1673,8 @@ import Navbar from "../components/Navbar.jsx";
           >
         </a>
         <p class="footer__tagline">
-          Ingeniería de software a tu medida.<br />Soluciones exactas para
-          desafíos reales.
+          Sistemas de ventas y gestión rentables.<br />Exclusivo para Barberías
+          y Spas.
         </p>
       </div>
 
@@ -1582,12 +1690,12 @@ import Navbar from "../components/Navbar.jsx";
 
       <div class="footer__links">
         <h4>Servicios</h4>
-        <a href="#servicios">Migración a la Nube</a>
-        <a href="#servicios">Canales de Venta Directa</a>
-        <a href="#servicios">Automatización de Tareas</a>
-        <a href="#servicios">Conexión de Software</a>
-        <a href="#servicios">Auditoría Operativa</a>
-        <a href="#servicios">Continuidad de Negocio</a>
+        <a href="#servicios">Agendamiento Automático</a>
+        <a href="#servicios">Recordatorios Anti-Faltas</a>
+        <a href="#servicios">Tareas Repetitivas</a>
+        <a href="#servicios">Fidelización VIP</a>
+        <a href="#servicios">Páginas Web Pro</a>
+        <a href="#servicios">Pagos Adelantados</a>
       </div>
 
       <div class="footer__links">
@@ -1635,4 +1743,55 @@ import Navbar from "../components/Navbar.jsx";
   </a>
 
   <script is:inline src="/js/main.js"></script>
+
+  <script is:inline>
+    // Hero Carousel
+    (function () {
+      const slides = document.querySelectorAll(".hero-carousel__slide");
+      const dots = document.querySelectorAll(".hero-carousel__dot");
+      const progress = document.getElementById("heroProgress");
+      if (!slides.length) return;
+
+      let current = 0;
+      const total = slides.length;
+      const interval = 5000;
+      let timer;
+
+      function goTo(index) {
+        slides[current].classList.remove("active");
+        dots[current].classList.remove("active");
+        current = index % total;
+        slides[current].classList.add("active");
+        dots[current].classList.add("active");
+        resetProgress();
+      }
+
+      function resetProgress() {
+        if (progress) {
+          progress.style.transition = "none";
+          progress.style.width = "0%";
+          void progress.offsetWidth; // force reflow
+          progress.style.transition = "width " + interval + "ms linear";
+          progress.style.width = "100%";
+        }
+      }
+
+      function startAuto() {
+        resetProgress();
+        timer = setInterval(function () {
+          goTo(current + 1);
+        }, interval);
+      }
+
+      dots.forEach(function (dot) {
+        dot.addEventListener("click", function () {
+          clearInterval(timer);
+          goTo(parseInt(dot.dataset.slide));
+          startAuto();
+        });
+      });
+
+      startAuto();
+    })();
+  </script>
 </Layout>

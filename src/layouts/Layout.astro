@@ -8,8 +8,8 @@ interface Props {
 }
 
 const { 
-  title = "SystemLab — Automatización de procesos empresariales en Perú",
-  description = "¿Pierdes dinero por trabajo manual y procesos lentos? Ofrecemos consultoría de software eficiente para empresas en Perú. Detectamos y automatizamos tus cuellos de botella en semanas."
+  title = "Software y Reservas para Barberías y Spas | SystemLab",
+  description = "Aumenta tus ganancias con nuestro software exclusivo para barberías y spas. Sistema de reservas 24/7, recordatorios anti-faltas y páginas web que venden."
 } = Astro.props;
 ---
 
@@ -19,7 +19,7 @@ const {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content={description}>
-  <meta name="keywords" content="software a medida, automatizar procesos, software para empresas, herramientas internas, desarrollo web, SystemLab">
+  <meta name="keywords" content="software para barberías, sistema de reservas spa, agendamiento automático, desarrollo web barbería, software gestión spa, SystemLab Perú">
   <meta name="author" content="SystemLab">
   <title>{title}</title>
 
@@ -31,13 +31,47 @@ const {
   <meta property="og:url" content="https://systemlab.com.pe/">
   <meta property="og:image" content="https://systemlab.com.pe/img/Logo/screen.png">
 
-  <!-- Structured Data para Google Search Console (Define el Site Name oficial) -->
+  <!-- Structured Data para Google Search Console (Define el Site Name oficial y Software) -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "SystemLab",
-      "url": "https://systemlab.com.pe/"
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://systemlab.com.pe/#website",
+          "url": "https://systemlab.com.pe/",
+          "name": "SystemLab",
+          "description": "Software y Reservas para Barberías y Spas",
+          "publisher": {
+            "@id": "https://systemlab.com.pe/#organization"
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://systemlab.com.pe/#organization",
+          "name": "SystemLab",
+          "url": "https://systemlab.com.pe/",
+          "logo": "https://systemlab.com.pe/img/Logo/screen.png",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+51-970-125-912",
+            "contactType": "customer service",
+            "areaServed": "PE",
+            "availableLanguage": "es"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "SystemLab Barber & Spa",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web, iOS, Android",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "PEN"
+          }
+        }
+      ]
     }
   </script>
 
@@ -47,8 +81,8 @@ const {
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@700;800;900&display=swap" rel="stylesheet">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/img/Logo/screen.png" sizes="any">
-  <link rel="apple-touch-icon" href="/img/Logo/screen.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="any">
+  <link rel="apple-touch-icon" href="/favicon.svg">
 </head>
 <body>
   <slot />
