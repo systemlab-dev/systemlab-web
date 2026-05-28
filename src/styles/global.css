@@ -428,7 +428,9 @@ ul, ol {
   border: 2px solid transparent;
   cursor: pointer;
   transition: all var(--transition-base);
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.3;
   position: relative;
   overflow: hidden;
 }
