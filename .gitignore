@@ -32,6 +32,7 @@ Desktop.ini
 
 # Agent config (local)
 .agent/
+.agents/
 
 # Temporary files
 *.tmp
