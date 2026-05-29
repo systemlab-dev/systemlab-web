@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# ⚠️ Actualiza esta URL cuando cambies el dominio en astro.config.mjs
+Sitemap: https://systemlab.com.pe/sitemap-index.xml
