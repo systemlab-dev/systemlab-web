@@ -144,25 +144,74 @@ import Navbar from "../components/Navbar.jsx";
             </div>
           </div>
           <div
-            class="hero-project-card"
+            class="hero-project-card dynamic-theme-card"
             data-reveal="fade-up"
             data-reveal-delay="200"
           >
-            <div
-              class="hero-project-card__img"
-              style="background-image: url('img/projects/corporacion.avif')"
-            >
+            <div class="hero-project-card__visual">
+              <div
+                class="hero-project-card__img theme-light-img"
+                style="background-image: url('/img/projects/portal-light.avif'); background-size: cover; background-position: top center;"
+              >
+              </div>
+              <div
+                class="hero-project-card__img theme-dark-img"
+                style="background-image: url('/img/projects/portal-dark.avif'); background-size: cover; background-position: top center;"
+              >
+              </div>
+              <button
+                type="button"
+                class="theme-switch-btn"
+                aria-label="Cambiar tema de la tarjeta"
+                onclick="this.closest('.dynamic-theme-card').classList.toggle('is-dark')"
+              >
+                <svg
+                  class="sun-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  ><circle cx="12" cy="12" r="5"></circle><line
+                    x1="12"
+                    y1="1"
+                    x2="12"
+                    y2="3"></line><line x1="12" y1="21" x2="12" y2="23"
+                  ></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"
+                  ></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"
+                  ></line><line x1="1" y1="12" x2="3" y2="12"></line><line
+                    x1="21"
+                    y1="12"
+                    x2="23"
+                    y2="12"></line><line
+                    x1="4.22"
+                    y1="19.78"
+                    x2="5.64"
+                    y2="18.36"></line><line
+                    x1="18.36"
+                    y1="5.64"
+                    x2="19.78"
+                    y2="4.22"></line></svg
+                >
+                <svg
+                  class="moon-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  ><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                  ></path></svg
+                >
+              </button>
             </div>
             <div class="hero-project-card__content">
-              <h3>Corporación Raunass: Sucursal Digital de Alto Rendimiento</h3>
+              <h3>Portal de Auto-Reserva: Agenda Digital Inteligente</h3>
               <p>
-                Presencia en internet optimizada para que tus clientes
-                corporativos te encuentren primero y confíen en ti al instante.
+                Sistema de reservas automatizado con diseño premium (Clean UI).
+                Permite a los clientes agendar citas 24/7 mientras tú gestionas
+                la disponibilidad sin fricciones.
               </p>
               <a
-                href="https://corporacionraunass.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="https://portal-de-auto-reserva.infinityfreeapp.com/"
                 class="btn btn--primary btn--small">Ver Proyecto</a
               >
             </div>
@@ -1118,16 +1167,16 @@ import Navbar from "../components/Navbar.jsx";
             data-reveal="flip-up"
             data-reveal-delay="300"
           >
-            <div class="card__project-visual card__project-visual--3">
+            <div class="card__project-visual card__project-visual--portal">
               <div class="card__project-overlay">
                 <span class="btn btn--small">Ver Proyecto</span>
               </div>
             </div>
             <div class="card__project-info">
-              <h3 class="card__title">App Logística Automotriz</h3>
+              <h3 class="card__title">Portal de Auto-Reserva</h3>
               <p class="card__desc">
-                Aplicación móvil para rastreo y gestión de flotas vehiculares
-                empresariales.
+                Sistema de agenda digital y gestión automatizada de citas (Clean
+                UI) exclusivo para negocios de belleza.
               </p>
             </div>
           </div>

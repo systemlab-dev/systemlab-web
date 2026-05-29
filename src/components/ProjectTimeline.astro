@@ -4,6 +4,18 @@
 const projects = [
   {
     num: "01",
+    tag: "Portal de Reservas",
+    title: "Portal de Auto-Reserva",
+    desc: "El negocio perdía clientes por no atender mensajes a tiempo y la agenda era un caos. Implementamos un sistema de reservas automatizado con diseño premium (Clean UI) que permite a los clientes agendar citas 24/7 de forma independiente. Resultado: gestión impecable y cero fricciones.",
+    tech: ["PHP", "Arquitectura MVC", "Clean UI", "MySQL"],
+    img: "/img/projects/portal-light.avif",
+    imgDark: "/img/projects/portal-dark.avif",
+    isDynamic: true,
+    fallbackImg: "/img/projects/portal-light.png",
+    link: "https://portal-de-auto-reserva.infinityfreeapp.com/"
+  },
+  {
+    num: "02",
     tag: "E-Commerce",
     title: "Tienda Online Florería",
     desc: "El negocio sangraba rentabilidad pagando comisiones a marketplaces, además del tiempo perdido cotizando por chat. Construimos una plataforma independiente de comercio electrónico. Cortamos las comisiones de terceros a cero y las ventas nocturnas se dispararon al automatizar el checkout.",
@@ -13,7 +25,7 @@ const projects = [
     link: "https://floreria-tiendaonline.infinityfreeapp.com/"
   },
   {
-    num: "02",
+    num: "03",
     tag: "Plataforma Web",
     title: "Sistema Reservas Barbería",
     desc: "La gestión por agenda de papel causaba sillas vacías no facturadas y clientes frustrados por demoras en respuestas. Implementamos una arquitectura escalable que gestiona citas y caja en tiempo real. La barbería recuperó los ingresos perdidos por cancelaciones y los barberos se dedicaron 100% a cortar.",
@@ -21,16 +33,6 @@ const projects = [
     img: "/img/projects/barberia.avif",
     fallbackImg: "/img/projects/barberia.png",
     link: "https://sistema-reservas-barberia.vercel.app/"
-  },
-  {
-    num: "03",
-    tag: "Sitio Corporativo",
-    title: "Web Corporativa Raunass",
-    desc: "Los clientes institucionales se encontraban con una web genérica y lenta, costando contratos corporativos de alto valor. Re-escribimos todo desde cero utilizando Astro para una velocidad extrema. El resultado fue una herramienta pasiva de ventas que proyecta autoridad inmediata.",
-    tech: ["Astro", "JavaScript", "HTML5", "CSS3"],
-    img: "/img/projects/corporacion.avif",
-    fallbackImg: "/img/projects/corporacion.png",
-    link: "https://corporacionraunass.vercel.app/"
   }
 ];
 ---
@@ -55,9 +57,23 @@ const projects = [
 
           <div class="timeline-card__inner">
             <!-- Image -->
-            <div class="timeline-card__img">
-              <img src={project.img} onerror={`this.src='${project.fallbackImg}'`} alt={project.title} loading="lazy" />
-              <div class="timeline-card__img-overlay"></div>
+            <div class={`timeline-card__img ${project.isDynamic ? 'dynamic-theme-card' : ''}`}>
+              {project.isDynamic ? (
+                <>
+                  <div class="theme-light-img" style={`background-image: url('${project.img}'); background-size: cover; background-position: top center; position: absolute; width: 100%; height: 100%;`}></div>
+                  <div class="theme-dark-img" style={`background-image: url('${project.imgDark}'); background-size: cover; background-position: top center; position: absolute; width: 100%; height: 100%;`}></div>
+                  <div class="timeline-card__img-overlay"></div>
+                  <button type="button" class="theme-switch-btn" aria-label="Cambiar tema de la tarjeta" onclick="this.closest('.dynamic-theme-card').classList.toggle('is-dark')">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                  </button>
+                </>
+              ) : (
+                <>
+                  <img src={project.img} onerror={`this.src='${project.fallbackImg}'`} alt={project.title} loading="lazy" />
+                  <div class="timeline-card__img-overlay"></div>
+                </>
+              )}
             </div>
 
             <!-- Content -->
